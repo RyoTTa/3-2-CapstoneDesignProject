@@ -44,7 +44,7 @@ public class MyPageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MyPageActivity.this, ReviewActivity.class);
                 startActivity(intent);
-                
+
             }
         });
 
