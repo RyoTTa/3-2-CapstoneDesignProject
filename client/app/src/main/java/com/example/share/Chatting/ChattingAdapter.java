@@ -50,7 +50,7 @@ public class ChattingAdapter extends BaseAdapter {
 
 
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
 

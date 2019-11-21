@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -120,7 +121,7 @@ public class ChattingActivity extends AppCompatActivity {
 
     private void openChat(String chatName) {
         // 리스트 어댑터 생성 및 세팅
-        final ChattingAdapter adapter = new ChattingAdapter(this,mItems);
+       final ChattingAdapter adapter = new ChattingAdapter(this,mItems);
 
 
         // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
@@ -128,11 +129,14 @@ public class ChattingActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("datasnapshot","data : "+dataSnapshot);
+
                 addMessage(dataSnapshot, adapter);
                 adapter.notifyDataSetChanged();
+
                 Log.e("LOG", "s:"+s);
                 try{
                     chat_view.setAdapter(adapter);
+                    chat_view.setSelection(adapter.getCount() - 1);
                 }catch (NullPointerException ne){
                     ne.printStackTrace();
                 }
@@ -141,6 +145,7 @@ public class ChattingActivity extends AppCompatActivity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
 
             }
 

@@ -50,4 +50,6 @@ public class ChatlistItem {
     public void setIcon(Drawable icon) {
         this.icon = icon;
     }
+
+
 }
