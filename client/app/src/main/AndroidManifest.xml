@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".Activity.HomeActivity" />
+        <activity android:name=".Activity.RegisterItemActivity"/>
         <activity android:name=".Activity.PayActivity" />
         <activity android:name=".Activity.ReservationInfoActivity" />
         <activity android:name=".Activity.LoginActivity" />

@@ -36,6 +36,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true" >
         <activity android:name="com.example.share.Activity.HomeActivity" />
+        <activity android:name="com.example.share.Activity.RegisterItemActivity" />
         <activity android:name="com.example.share.Activity.PayActivity" />
         <activity android:name="com.example.share.Activity.ReservationInfoActivity" />
         <activity android:name="com.example.share.Activity.LoginActivity" />

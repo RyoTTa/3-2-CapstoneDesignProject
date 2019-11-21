@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
 MERGED from [com.github.applikeysolutions:cosmocalendar:1.0.4] /Users/jihye/.gradle/caches/transforms-1/files-1.1/jetified-cosmocalendar-1.0.4.aar/8b698f0550dbd921dfa3c5ed623c88fd/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.material:material:1.0.0] /Users/jihye/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/f0d9f636fc9479e874c6475a421aa572/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] /Users/jihye/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/b8a4f5b4b7a99a46c9563cc930d409de/AndroidManifest.xml:17:1-22:12
@@ -65,20 +65,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/jihye/.gra
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/jihye/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/8df58a46034947b994d0d013ed8ce8a1/AndroidManifest.xml:17:1-22:12
 MERGED from [com.koushikdutta.async:androidasync:3.0.8] /Users/jihye/.gradle/caches/transforms-1/files-1.1/androidasync-3.0.8.aar/80d952c18670a8abef4993f65fa50580/AndroidManifest.xml:2:1-16:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] /Users/jihye/.gradle/caches/transforms-1/files-1.1/firebase-database-collection-17.0.0.aar/fb59ef9bb8c7e94926fab6ccc02a8f98/AndroidManifest.xml:2:1-7:12
-INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
+INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:1-56:12
 		INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:2:11-69
@@ -105,7 +105,7 @@ MERGED from [com.koushikdutta.async:androidasync:3.0.8] /Users/jihye/.gradle/cac
 	android:name
 		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:4:22-64
 application
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:5:5-50:19
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:5:5-51:19
 MERGED from [com.google.android.material:material:1.0.0] /Users/jihye/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/f0d9f636fc9479e874c6475a421aa572/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] /Users/jihye/.gradle/caches/transforms-1/files-1.1/material-1.0.0.aar/f0d9f636fc9479e874c6475a421aa572/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /Users/jihye/.gradle/caches/transforms-1/files-1.1/constraintlayout-1.1.3.aar/3dc56018a35e71baed92f151aa060a96/AndroidManifest.xml:9:5-20
@@ -182,126 +182,130 @@ activity#com.example.share.Activity.HomeActivity
 ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:13:9-59
 	android:name
 		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:13:19-56
+activity#com.example.share.Activity.RegisterItemActivity
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:14:9-66
+	android:name
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:14:19-64
 activity#com.example.share.Activity.PayActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:14:9-58
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:15:9-58
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:14:19-55
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:15:19-55
 activity#com.example.share.Activity.ReservationInfoActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:15:9-70
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:16:9-70
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:15:19-67
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:16:19-67
 activity#com.example.share.Activity.LoginActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:16:9-60
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:17:9-60
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:16:19-57
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:17:19-57
 activity#com.example.share.Activity.SignUpActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:17:9-61
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:18:9-61
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:17:19-58
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:18:19-58
 activity#com.example.share.Activity.BucketListActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:18:9-65
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:19:9-65
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:18:19-62
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:19:19-62
 activity#com.example.share.Activity.ItemListActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:19:9-63
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:20:9-63
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:19:19-60
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:20:19-60
 activity#com.example.share.Activity.ItemDetailActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:20:9-64
-	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:20:19-62
-activity#com.example.share.Activity.MapsMarkerActivity
 ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:21:9-64
 	android:name
 		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:21:19-62
+activity#com.example.share.Activity.MapsMarkerActivity
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:22:9-64
+	android:name
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:22:19-62
 activity#com.example.share.Activity.AddCardDetailActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:22:9-67
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:23:9-67
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:22:19-65
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:23:19-65
 activity#com.example.share.Chatting.ChattingActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:23:9-62
-	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:23:19-60
-activity#com.example.share.Chatting.ChatListActivity
 ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:24:9-62
 	android:name
 		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:24:19-60
+activity#com.example.share.Chatting.ChatListActivity
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:25:9-62
+	android:name
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:25:19-60
 activity#com.example.share.Activity.SelectDateActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:25:9-26:52
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:26:9-27:52
 	android:theme
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:26:13-50
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:27:13-50
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:25:19-62
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:26:19-62
 activity#com.example.share.Activity.MapsMarkerRegiActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:27:9-68
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:28:9-68
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:27:19-66
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:28:19-66
 activity#com.example.share.Activity.ShareListActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:28:9-63
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:29:9-63
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:28:19-61
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:29:19-61
 activity#com.example.share.Activity.BorrowListActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:29:9-64
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:30:9-64
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:29:19-62
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:30:19-62
 activity#com.example.share.Activity.MyPageActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:30:9-60
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:31:9-60
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:30:19-58
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:31:19-58
 activity#com.example.share.Activity.UpdateItemActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:31:9-64
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:32:9-64
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:31:19-62
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:32:19-62
 activity#com.example.share.Activity.RegisterReviewActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:32:9-34:52
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:33:9-35:52
 	android:theme
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:34:13-50
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:35:13-50
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:33:13-60
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:34:13-60
 activity#com.example.share.Activity.ReviewActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:35:9-60
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:36:9-60
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:35:19-58
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:36:19-58
 activity#com.example.share.Activity.MainActivity
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:36:9-42:20
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:37:9-43:20
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:36:19-56
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:37:19-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:37:13-41:29
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:38:13-42:29
 action#android.intent.action.MAIN
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:38:17-69
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:39:17-69
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:38:25-66
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:39:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:40:17-77
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:41:17-77
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:40:27-74
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:41:27-74
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:43:9-45:54
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:44:9-46:54
 	android:value
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:45:13-52
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:46:13-52
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:44:13-58
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:45:13-58
 meta-data#com.google.android.gms.version
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:46:9-48:69
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:47:9-49:69
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/jihye/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/2893bc928cf1b1627c9d5960eb3ad28a/AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] /Users/jihye/.gradle/caches/transforms-1/files-1.1/jetified-play-services-basement-17.0.0.aar/2893bc928cf1b1627c9d5960eb3ad28a/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:48:13-66
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:49:13-66
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:47:13-58
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:48:13-58
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:52:5-80
-	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:52:22-77
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:53:5-80
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:53:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:54:5-79
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:53:22-77
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:54:5-80
 	android:name
-		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:54:22-76
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:54:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:55:5-79
+	android:name
+		ADDED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml:55:22-76
 uses-sdk
 INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/jihye/Share_Service_Platform_5-/client/app/src/main/AndroidManifest.xml

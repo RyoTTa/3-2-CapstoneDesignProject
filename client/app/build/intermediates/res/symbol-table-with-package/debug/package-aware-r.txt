@@ -1163,6 +1163,8 @@ drawable ic_triangle_green
 drawable ic_triangle_white
 drawable id_box
 drawable id_icon
+drawable item_delete_icon
+drawable item_edit_icon
 drawable item_list_box
 drawable item_sample_hammer
 drawable item_sample_handmixer
@@ -1435,7 +1437,7 @@ id mypage_header
 id mypage_id_box
 id mypage_picture
 id mypage_user_email
-id mypage_user_id
+id mypage_user_name
 id name_box
 id name_input
 id navigation_header_container
