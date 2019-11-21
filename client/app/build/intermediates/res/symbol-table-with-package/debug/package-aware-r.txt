@@ -1300,6 +1300,7 @@ id chat_username
 id chatlist_content
 id chatlist_username
 id chatlist_userphoto
+id chatroomlistview
 id chattinglistView
 id checkBox
 id checkbox
@@ -1478,11 +1479,14 @@ id register_price
 id register_review_content
 id register_review_star
 id register_title
-id return_btn
+id rev_content
 id rev_user_name
 id rev_user_star
-id review_btn
 id review_number
+id review_starnum
+id review_starrating
+id review_username
+id reviewlistView
 id right
 id right_icon
 id right_side

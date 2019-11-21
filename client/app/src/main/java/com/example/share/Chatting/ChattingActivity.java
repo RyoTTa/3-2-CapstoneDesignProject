@@ -53,26 +53,42 @@ public class ChattingActivity extends AppCompatActivity {
         chat_edit = (EditText) findViewById(R.id.chat_EditText);
         chat_send = (Button) findViewById(R.id.send);
 
-        // 로그인 화면에서 받아온 채팅방 이름, 유저 이름 저장
+        // 상대 저장
         Intent intent = getIntent();
         owner_email =intent.getStringExtra("owner_email");
-        //CHAT_NAME = intent.getStringExtra("chat_name");
+        owner_name = intent.getStringExtra("owner_name");
+
+        //유저 정보 저장
         pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
 
         USER_NAME = pref.getString("user_name",null);
         user_email = pref.getString("user_email",null);
-        owner_name = intent.getStringExtra("owner_name");
 
-        if(owner_email.compareTo(owner_email) == -1) {
-            CHAT_NAME = owner_email+"-"+user_email;
+        int idx1 = user_email.indexOf(".");
+        int idx2 = owner_email.indexOf(".");
+
+        String userE = user_email.substring(0,idx1);
+        String owerE = owner_email.substring(0,idx2);
+
+        Log.d("jihye","owner:"+owerE );
+        Log.d("jihye","user:"+userE );
+        if(owerE.compareTo(userE)<0) {
+            CHAT_NAME = owerE+"-"+userE;
+            Log.d("jihye","ownerE<userE" );
         }else{
-            CHAT_NAME = user_email+"-"+owner_email;
+            CHAT_NAME = userE+"-"+owerE;
+            Log.d("jihye","ownerE>=userE" );
         }
 
+        Log.d("jihye",CHAT_NAME);
         chatroom_title = (TextView)findViewById(R.id.chat_username);
         chatroom_title.setText(owner_name);
+
+
         // 채팅 방 입장
+
         openChat(CHAT_NAME);
+
 
         // 메시지 전송 버튼에 대한 클릭 리스너 지정
         chat_send.setOnClickListener(new View.OnClickListener() {
@@ -92,21 +108,20 @@ public class ChattingActivity extends AppCompatActivity {
     private void addMessage(DataSnapshot dataSnapshot, ChattingAdapter adapter) {
         ChatlistItem chatlistItem = dataSnapshot.getValue(ChatlistItem.class);
         Log.d("datasnapshot","chatistItem : "+chatlistItem.getUserName()+","+chatlistItem.getMessage());
-        adapter.addItem(chatlistItem.getUserName(),chatlistItem.getMessage());
+
+        if(chatlistItem.getUserName().equals(USER_NAME) == true) {
+            adapter.addItem(1,chatlistItem.getUserName(), chatlistItem.getMessage());
+        }else
+            adapter.addItem(0,chatlistItem.getUserName(),chatlistItem.getMessage());
+        //adapter.addItem(chatlistItem.getUserName(),chatlistItem.getMessage());
         Log.d("datasnapshot","chatistItem : "+adapter.getCount());
     }
 
-   /* private void removeMessage(DataSnapshot dataSnapshot, ArrayAdapter<String> adapter) {
-        ChatDTO chatDTO = dataSnapshot.getValue(ChatDTO.class);
-        adapter.remove(chatDTO.getUserName() + " : " + chatDTO.getMessage());
-    }*/
 
     private void openChat(String chatName) {
         // 리스트 어댑터 생성 및 세팅
         final ChattingAdapter adapter = new ChattingAdapter(this,mItems);
 
-              /*  = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1);
-        chat_view.setAdapter(adapter);*/
 
         // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
         databaseReference.child("chat").child(chatName).addChildEventListener(new ChildEventListener() {

@@ -3,6 +3,7 @@ package com.example.share.Activity;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.location.Location;
@@ -104,7 +105,8 @@ public class ItemListActivity extends AppCompatActivity {
         page_header = (TextView) findViewById(R.id.page_header);
         page_header.setText(currentCategory);
 
-        UserEmail = intent.getExtras().getString("UserEmail");
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        UserEmail = pref.getString("user_email",null);
 
         //for DB connection, replace this with proper solution later..
         if (Build.VERSION.SDK_INT > 9) {

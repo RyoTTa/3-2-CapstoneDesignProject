@@ -4,13 +4,28 @@ import android.graphics.drawable.Drawable;
 
 public class ChatlistItem {
 
+    private int type;
     private Drawable icon;
     private String userName;
     private String message;
+
     public ChatlistItem() {}
-    public ChatlistItem(String userName, String message) {
+    public ChatlistItem(int type,String userName, String message) {
         this.userName = userName;
         this.message = message;
+        this.type = type;
+    }
+
+    public ChatlistItem(String userName, String message){
+        this.userName = userName;
+        this.message = message;
+    }
+    public void setType(int type) {
+        this.type = type ;
+    }
+
+    public int getType() {
+        return this.type ;
     }
 
     public void setUserName(String userName) {

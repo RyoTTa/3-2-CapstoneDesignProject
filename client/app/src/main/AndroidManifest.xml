@@ -15,14 +15,13 @@
         <activity android:name=".Activity.ReservationInfoActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.SignUpActivity" />
-        <activity android:name=".Activity.ChatListActivity" />
         <activity android:name=".Activity.BucketListActivity" />
         <activity android:name=".Activity.ItemListActivity" />
         <activity android:name=".Activity.ItemDetailActivity"/>
         <activity android:name=".Activity.MapsMarkerActivity"/>
         <activity android:name=".Activity.AddCardDetailActivity"/>
-        <activity android:name=".Activity.RegisterItemActivity"/>
         <activity android:name=".Chatting.ChattingActivity"/>
+        <activity android:name=".Chatting.ChatListActivity"/>
         <activity android:name=".Activity.SelectDateActivity"
             android:theme="@style/Theme.MyDialog"/>
         <activity android:name=".Activity.MapsMarkerRegiActivity"/>
@@ -33,6 +32,7 @@
         <activity
             android:name=".Activity.RegisterReviewActivity"
             android:theme="@style/Theme.MyDialog"/>
+        <activity android:name=".Activity.ReviewActivity"/>
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
