@@ -13,8 +13,8 @@
             android:id="@+id/edit_item_button"
             android:layout_width="50dp"
             android:layout_height="23dp"
-            android:layout_marginStart="210dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginStart="280dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/item_edit_icon" />
@@ -23,11 +23,10 @@
             android:id="@+id/delete_item_button"
             android:layout_width="50dp"
             android:layout_height="23dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.064"
-            app:layout_constraintStart_toEndOf="@+id/edit_item_button"
+            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/item_delete_icon" />
 
@@ -35,9 +34,8 @@
             android:id="@+id/item_detail_item_image"
             android:layout_width="323dp"
             android:layout_height="291dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -194,6 +192,17 @@
             app:layout_constraintHorizontal_bias="0.573"
             app:layout_constraintStart_toEndOf="@+id/btn_question"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/bucketheart"
+            android:layout_width="32dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="248dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.883"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/heart" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

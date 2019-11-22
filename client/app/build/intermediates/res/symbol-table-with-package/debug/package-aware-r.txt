@@ -1110,6 +1110,7 @@ drawable btn_add
 drawable btn_question
 drawable btn_register_review
 drawable btn_reservation
+drawable bucketheart2
 drawable card
 drawable chatting_background_blue
 drawable common_full_open_on_phone
@@ -1144,6 +1145,7 @@ drawable google_button
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable head_logo
+drawable heart
 drawable home_child_ic
 drawable home_etc_ic
 drawable home_logo
@@ -1278,6 +1280,7 @@ id btn_question
 id btn_reservation
 id btnregister
 id btnregister_review
+id bucketheart
 id buttonPanel
 id calendar_view
 id cancel_action
