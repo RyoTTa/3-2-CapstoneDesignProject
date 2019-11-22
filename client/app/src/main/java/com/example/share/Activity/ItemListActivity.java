@@ -54,9 +54,11 @@ public class ItemListActivity extends AppCompatActivity {
     private GridView gridView = null;
     private LocationManager lm = null;
     private TextView page_header = null;
+    private ArrayList<String> Mybucketlist;
     String[] text = {"장소", "공구", "음향기기", "의료", "유아용품", "기타"};
     String[] text_send = {"place", "tool", "sound_equipment", "medical_equipment", "baby_goods", "etc"};
     String UserEmail;
+
 
     //util
     private SimpleDateFormat sdf= null;
@@ -76,6 +78,7 @@ public class ItemListActivity extends AppCompatActivity {
     private int MongoDB_PORT = 27017;
     private String DB_NAME = "local";
     private String COLLECTION_NAME = "items";
+    private String BUCKET_NAME = "buckets";
 
     //
     private String currentCategory = "tool";
@@ -99,6 +102,27 @@ public class ItemListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_itemlist);
+        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
+        UserEmail = pref.getString("user_email",null);
+
+        //bucketlist 불러와서 bucket itemid list에 저장하기
+        Mybucketlist = new ArrayList<String>();
+        MongoClient  mongoClient = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
+        DB db = mongoClient.getDB(DB_NAME);
+        DBCollection bucket = db.getCollection(BUCKET_NAME);
+        BasicDBObject querybucket = new BasicDBObject();
+        querybucket.put("email",UserEmail);
+        DBCursor cursorbucket = bucket.find(querybucket);
+        while (cursorbucket.hasNext()) {
+
+            DBObject dbo = (BasicDBObject) cursorbucket.next();
+            try {
+                Mybucketlist.add(dbo.get("item_id").toString());
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+
 
         Intent intent = getIntent();
         currentCategory = intent.getStringExtra("category");
@@ -106,8 +130,7 @@ public class ItemListActivity extends AppCompatActivity {
         page_header = (TextView) findViewById(R.id.page_header);
         page_header.setText(currentCategory);
 
-        SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
-        UserEmail = pref.getString("user_email",null);
+
 
         //for DB connection, replace this with proper solution later..
         if (Build.VERSION.SDK_INT > 9) {
@@ -120,8 +143,6 @@ public class ItemListActivity extends AppCompatActivity {
         items_from_db = new ArrayList<Item>();
 
         //Connect to MongoDB
-        MongoClient  mongoClient = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
-        DB db = mongoClient.getDB(DB_NAME);
         DBCollection collection = db.getCollection(COLLECTION_NAME);
 
         //Check Data in Database with query
@@ -204,7 +225,18 @@ public class ItemListActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(ItemListActivity.this, ItemDetailActivity.class);
                 intent.putExtra("item_object",item);
-
+                int bucket_check =0;
+                for(int i=0; i<Mybucketlist.size(); i++)
+                {
+                    if(Mybucketlist.get(i).equals(item.getItem_id())){
+                        bucket_check = 1;
+                    }
+                }
+                if(bucket_check == 0) {
+                    intent.putExtra("bucket","false");
+                }else if(bucket_check == 1){
+                    intent.putExtra("bucket","true");
+                }
                 startActivity(intent);
             }
         });

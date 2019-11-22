@@ -57,6 +57,7 @@ public class ItemDetailActivity extends AppCompatActivity {
     ImageView question;
     ImageView reservation;
     ImageView bucketheart;
+    String bucket_check;
     int i =0;
 
     //mongoDB
@@ -83,6 +84,9 @@ public class ItemDetailActivity extends AppCompatActivity {
         //get all the data passed
         item = (Item)intent.getSerializableExtra("item_object");
         item_id = item.getItem_id();
+        bucket_check = intent.getStringExtra("bucket");
+
+
 
         //get all the layout
         ImageView item_image = (ImageView)findViewById(R.id.item_detail_item_image);
@@ -191,6 +195,12 @@ public class ItemDetailActivity extends AppCompatActivity {
         }else{
             editBtn.setVisibility(View.INVISIBLE);
             deleteBtn.setVisibility(View.INVISIBLE);
+        }
+
+
+        if(bucket_check.equals("true")){
+            bucketheart.setImageResource(R.drawable.bucketheart2);
+            i=1;
         }
 
         bucketheart.setOnClickListener(new View.OnClickListener() {

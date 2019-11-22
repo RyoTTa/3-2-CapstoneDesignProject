@@ -1,4 +1,4 @@
-#Fri Nov 22 17:13:03 KST 2019
+#Fri Nov 22 17:41:59 KST 2019
 base.0=/Users/jihye/Share_Service_Platform_5-/client/app/build/intermediates/transforms/dexMerger/debug/0
 path.1=classes.dex
 renamed.1=classes2.dex
