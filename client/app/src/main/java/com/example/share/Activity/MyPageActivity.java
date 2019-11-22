@@ -33,6 +33,7 @@ public class MyPageActivity extends AppCompatActivity {
         borrow_button = (ImageButton)findViewById(R.id.share2);
         review_button = (ImageButton)findViewById(R.id.share3);
 
+
         user_email = (TextView)findViewById(R.id.mypage_user_email);
         user_name = (TextView)findViewById(R.id.mypage_user_name);
 
@@ -67,6 +68,8 @@ public class MyPageActivity extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 }

@@ -17,8 +17,9 @@ public class Item implements Comparable<Item>,Serializable {
     private String file_path;
     private String category;
     private String content;
+    private String owner_email;
 
-    public Item(String item_id,String item_name, String item_price_per_day, double latitude, double longitude, Date availableFrom, Date availableTo, String FilePath,String category, String content){
+    public Item(String item_id,String item_name, String item_price_per_day, double latitude, double longitude, Date availableFrom, Date availableTo, String FilePath,String category, String content, String owner_email){
         this.item_id = item_id;
         this.item_name = item_name;
         this.item_price_per_day = item_price_per_day;
@@ -29,6 +30,7 @@ public class Item implements Comparable<Item>,Serializable {
         this.file_path = FilePath;
         this.category = category;
         this.content = content;
+        this.owner_email= owner_email;
     }
 
     public String getItem_id() {
@@ -66,6 +68,8 @@ public class Item implements Comparable<Item>,Serializable {
     public String getContent() {        return content;    }
 
     public void setContent(String content) {        this.content = content;    }
+
+    public String getOwner_name(){ return this.owner_email; }
 
     @Override
     public int compareTo(Item i) {

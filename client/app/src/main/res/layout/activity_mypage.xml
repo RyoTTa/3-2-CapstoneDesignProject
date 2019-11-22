@@ -77,6 +77,8 @@
         app:layout_constraintTop_toTopOf="@+id/share2"
         app:layout_constraintVertical_bias="0.0" />
 
+
+
     <ImageButton
         android:id="@+id/share3"
         android:layout_width="74dp"
@@ -92,6 +94,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/share2"
         app:layout_constraintVertical_bias="0.0" />
+
+
 
     <TextView
         android:id="@+id/mypage_user_name"

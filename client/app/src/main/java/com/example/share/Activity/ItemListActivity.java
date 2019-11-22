@@ -92,6 +92,7 @@ public class ItemListActivity extends AppCompatActivity {
     private String newCategory;
     private String newFilePath;
     private String newContent;
+    private String newOwner_email;
     private FromServerImage newImage = new FromServerImage();
 
     @Override
@@ -143,6 +144,7 @@ public class ItemListActivity extends AppCompatActivity {
                 newCategory = dbo.get("category").toString();
                 newFilePath = dbo.get("image_path").toString();
                 newContent = dbo.get("contents").toString();
+                newOwner_email = dbo.get("owner_email").toString();
 
                 /*
                     Log.d("MONGODB", new_id);
@@ -162,7 +164,7 @@ public class ItemListActivity extends AppCompatActivity {
                 //TODO: change to imagePath
                 if (currentCategory.equals(newCategory)) {
                     items_from_db.add(new Item(new_id, newName, newPPD, newLatitude, newLongitude,
-                            newDateFrom, newDateTo, newFilePath,newCategory,newContent));
+                            newDateFrom, newDateTo, newFilePath,newCategory,newContent,newOwner_email));
                 }
             } catch (NumberFormatException e) {
                 e.printStackTrace();

@@ -155,6 +155,7 @@ public class ItemDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ReservationInfoActivity.class);
                 intent.putExtra("item_object",item);
+                intent.putExtra("type","reservation_info");
                 startActivity(intent);
             }
         });

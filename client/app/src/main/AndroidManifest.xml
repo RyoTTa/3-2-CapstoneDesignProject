@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.share">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/appic"
@@ -11,29 +17,30 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".Activity.HomeActivity" />
-        <activity android:name=".Activity.RegisterItemActivity"/>
+        <activity android:name=".Activity.RegisterItemActivity" />
         <activity android:name=".Activity.PayActivity" />
         <activity android:name=".Activity.ReservationInfoActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.SignUpActivity" />
         <activity android:name=".Activity.BucketListActivity" />
         <activity android:name=".Activity.ItemListActivity" />
-        <activity android:name=".Activity.ItemDetailActivity"/>
-        <activity android:name=".Activity.MapsMarkerActivity"/>
-        <activity android:name=".Activity.AddCardDetailActivity"/>
-        <activity android:name=".Chatting.ChattingActivity"/>
-        <activity android:name=".Chatting.ChatListActivity"/>
-        <activity android:name=".Activity.SelectDateActivity"
-            android:theme="@style/Theme.MyDialog"/>
-        <activity android:name=".Activity.MapsMarkerRegiActivity"/>
-        <activity android:name=".Activity.ShareListActivity"/>
-        <activity android:name=".Activity.BorrowListActivity"/>
-        <activity android:name=".Activity.MyPageActivity"/>
-        <activity android:name=".Activity.UpdateItemActivity"/>
+        <activity android:name=".Activity.ItemDetailActivity" />
+        <activity android:name=".Activity.MapsMarkerActivity" />
+        <activity android:name=".Activity.AddCardDetailActivity" />
+        <activity android:name=".Chatting.ChattingActivity" />
+        <activity android:name=".Chatting.ChatListActivity" />
+        <activity
+            android:name=".Activity.SelectDateActivity"
+            android:theme="@style/Theme.MyDialog" />
+        <activity android:name=".Activity.MapsMarkerRegiActivity" />
+        <activity android:name=".Activity.ShareListActivity" />
+        <activity android:name=".Activity.BorrowListActivity" />
+        <activity android:name=".Activity.MyPageActivity" />
+        <activity android:name=".Activity.UpdateItemActivity" />
         <activity
             android:name=".Activity.RegisterReviewActivity"
-            android:theme="@style/Theme.MyDialog"/>
-        <activity android:name=".Activity.ReviewActivity"/>
+            android:theme="@style/Theme.MyDialog" />
+        <activity android:name=".Activity.ReviewActivity" />
         <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,16 +48,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
+            android:value="@string/google_maps_key" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
-
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
 </manifest>

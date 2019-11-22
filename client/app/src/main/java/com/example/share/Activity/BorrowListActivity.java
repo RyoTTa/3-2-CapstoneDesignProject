@@ -88,6 +88,7 @@ public class BorrowListActivity extends AppCompatActivity {
     private String newCategory;
     private String newFilePath;
     private String newContent;
+    private String newOwner_email;
     private FromServerImage newImage = new FromServerImage();
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +134,7 @@ public class BorrowListActivity extends AppCompatActivity {
                 newCategory = dbo.get("category").toString();
                 newFilePath = dbo.get("image_path").toString();
                 newContent = dbo.get("contents").toString();
+                newOwner_email = dbo.get("owner_email").toString();
                 Log.d("MONGODB", new_id);
                 Log.d("MONGODB", "");
                 Log.d("MONGODB", newName);
@@ -144,7 +146,7 @@ public class BorrowListActivity extends AppCompatActivity {
                 Log.d("MONGODB", newCategory);
                 //Log.d("MONGODB","-");
                 //TODO: change to imagePath
-                items_from_db.add(new Item(new_id, newName, newPPD, newLatitude, newLongitude, newDateFrom, newDateTo, newFilePath,newCategory,newContent));
+                items_from_db.add(new Item(new_id, newName, newPPD, newLatitude, newLongitude, newDateFrom, newDateTo, newFilePath,newCategory,newContent,newOwner_email));
             } catch (NumberFormatException e) {
                 e.printStackTrace();
             }
@@ -180,8 +182,9 @@ public class BorrowListActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Item item = items_from_db.get(position);
 
-                Intent intent = new Intent(BorrowListActivity.this, ItemDetailActivity.class);
+                Intent intent = new Intent(BorrowListActivity.this,ReservationInfoActivity.class);
                 intent.putExtra("item_object",item);
+                intent.putExtra("type","borrow_detail");
 
                 startActivity(intent);
             }

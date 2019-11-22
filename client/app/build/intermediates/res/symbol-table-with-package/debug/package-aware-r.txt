@@ -1132,6 +1132,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable complete_btn
+drawable completebtn
 drawable cutline
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
