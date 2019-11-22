@@ -134,7 +134,8 @@ public class ItemDetailActivity extends AppCompatActivity {
         query2.put("email", owner_email);
         DBObject dbObj2 = collection2.findOne(query2);
         owner_image.setImageResource(R.drawable.owner_sample);
-        owner_name.setText(dbObj2.get("name").toString());
+        String name = dbObj2.get("name").toString();
+        owner_name.setText(name);
         owner_rating.setText("4.5 / 5");
 
         question.setOnClickListener(new View.OnClickListener() {
@@ -142,7 +143,7 @@ public class ItemDetailActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), ChattingActivity.class);
                 intent.putExtra("owner_email",owner_email);
-              //  intent.putExtra("owner_name",owner);
+                intent.putExtra("owner_name",name );
 
 
                 startActivity(intent);

@@ -1489,6 +1489,7 @@ id review_starnum
 id review_starrating
 id review_username
 id reviewlistView
+id revinfo_star
 id right
 id right_icon
 id right_side
@@ -1540,7 +1541,6 @@ id src_atop
 id src_in
 id src_over
 id standard
-id star
 id start
 id status_bar_latest_event_content
 id stretch

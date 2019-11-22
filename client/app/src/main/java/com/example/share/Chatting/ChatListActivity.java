@@ -73,7 +73,6 @@ public class ChatListActivity extends AppCompatActivity {
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("LOG", "dataSnapshot.getKey() : " + dataSnapshot.getKey());
                 chatroomlistitem = dataSnapshot.getValue(ChatroomlistItem.class);
-                Log.d("jihye","add 전 : "+adapter.getCount());
 
                 int idx = dataSnapshot.getKey().indexOf("-");
 
@@ -95,6 +94,7 @@ public class ChatListActivity extends AppCompatActivity {
                     chatroomlistitem.setOther_email(email2);
                     chatroomlistitem.setRoomName(chatroomlistitem.getOther_name());
 
+                    Log.d("jihye",chatroomlistitem.getOther_email());
                     adapter.add(chatroomlistitem.getOther_name(),chatroomlistitem.getMessage());
                     Log.d("jihye","add 후 : "+adapter.getCount());
                     adapter.notifyDataSetChanged();

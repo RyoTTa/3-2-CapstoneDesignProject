@@ -200,10 +200,15 @@
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
 
-                            <ImageView
-                                android:id="@+id/star"
+                            <RatingBar
+                                android:id="@+id/revinfo_star"
+                                style="@style/Widget.AppCompat.RatingBar.Small"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:isIndicator="true"
+                                android:numStars="5"
+                                android:stepSize="0.1" />
 
                             <TextView
                                 android:id="@+id/review_number"

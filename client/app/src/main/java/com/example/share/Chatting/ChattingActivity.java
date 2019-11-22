@@ -71,6 +71,7 @@ public class ChattingActivity extends AppCompatActivity {
         String userE = user_email.substring(0,idx1);
         String owerE = owner_email.substring(0,idx2);
 
+        Log.d("jihye","owner name : " + owner_name);
         Log.d("jihye","owner:"+owerE );
         Log.d("jihye","user:"+userE );
         if(owerE.compareTo(userE)<0) {
