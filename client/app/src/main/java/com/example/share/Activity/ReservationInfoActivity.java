@@ -110,6 +110,7 @@ public class ReservationInfoActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),PayActivity.class);
                 intent.putExtra("item_object",item);
+                intent.putExtra("owner_name",name);
                 startActivity(intent);
             }
         });

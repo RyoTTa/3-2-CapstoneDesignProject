@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "/Users/jihye/Share_Service_Platform_5-/client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.2.aar\\b0f3c92984478ec450ba396604975720\\res\\values-v26\\values-v26.xml",
+                    "source": "/Users/jihye/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/b8a4f5b4b7a99a46c9563cc930d409de/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

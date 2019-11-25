@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.share.Card.AddCard;
+import com.example.share.Chatting.ChattingActivity;
 import com.example.share.Data.Item;
 import com.example.share.Card.FirstCard;
 import com.example.share.R;
@@ -51,6 +52,8 @@ public class PayActivity extends AppCompatActivity {
         //get all the data passed
         item = (Item)intent.getSerializableExtra("item_object");
         item_id = item.getItem_id();
+        String owner_name = intent.getStringExtra("owner_name");
+        String owner_email = item.getOwner_email();
 
         complete = (ImageView)findViewById(R.id.complete);
         cardlist = (ViewPager)findViewById(R.id.cardlist);
@@ -67,14 +70,22 @@ public class PayActivity extends AppCompatActivity {
         complete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(getApplicationContext(),ChattingActivity.class);
+
 
                 SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
                 User_email = pref.getString("user_email",null);
                 Log.d("EMAILCHK","useremail : "+pref.getString("user_email",null));
 
                 new PayActivity.JSONTask().execute("http://ec2-15-164-51-129.ap-northeast-2.compute.amazonaws.com:3000/reservation");
-                //startActivity(intent);
+
+
+                Intent intent = new Intent(getApplicationContext(), ChattingActivity.class);
+                Log.d("jihye","null"+item.getOwner_email());
+                intent.putExtra("owner_email",owner_email);
+                intent.putExtra("owner_name",owner_name);
+                intent.putExtra("item",item);
+                startActivity(intent);
+
             }
         });
 

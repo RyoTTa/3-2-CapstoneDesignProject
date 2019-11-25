@@ -15,6 +15,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
+import com.example.share.Data.Item;
 import com.example.share.R;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -30,11 +31,11 @@ public class ChattingActivity extends AppCompatActivity {
     private String CHAT_NAME;
     private String USER_NAME;
     private String user_email;
-
+    private Item item;
     private ListView chat_view;
     private EditText chat_edit;
     private Button chat_send;
-
+    private int type;
     private String owner_email;
     private String owner_name;
     private TextView chatroom_title;
@@ -59,9 +60,9 @@ public class ChattingActivity extends AppCompatActivity {
         owner_email =intent.getStringExtra("owner_email");
         owner_name = intent.getStringExtra("owner_name");
 
+        Log.d("jihye","null"+owner_email);
         //유저 정보 저장
         pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
-
         USER_NAME = pref.getString("user_name",null);
         user_email = pref.getString("user_email",null);
 
@@ -86,10 +87,16 @@ public class ChattingActivity extends AppCompatActivity {
         chatroom_title = (TextView)findViewById(R.id.chat_username);
         chatroom_title.setText(owner_name);
 
+        item = (Item)intent.getSerializableExtra("item");
 
-        // 채팅 방 입장
+        //reservation일 경우
+        if(item != null) {
+            type = 1;
+        }
 
         openChat(CHAT_NAME);
+        // 채팅 방 입장
+
 
 
         // 메시지 전송 버튼에 대한 클릭 리스너 지정
@@ -125,11 +132,19 @@ public class ChattingActivity extends AppCompatActivity {
        final ChattingAdapter adapter = new ChattingAdapter(this,mItems);
 
 
+
         // 데이터 받아오기 및 어댑터 데이터 추가 및 삭제 등..리스너 관리
         databaseReference.child("chat").child(chatName).addChildEventListener(new ChildEventListener() {
             @Override
+
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Log.d("datasnapshot","data : "+dataSnapshot);
+
+                if(type==1){
+                    ChatDTO chat = new ChatDTO(USER_NAME,item.getItem_name()+"예약 신청"); //ChatDTO를 이용하여 데이터를 묶는다.
+                    databaseReference.child("chat").child(CHAT_NAME).push().setValue(chat); // 데이터 푸쉬
+                    type = 100;
+                }
 
                 addMessage(dataSnapshot, adapter);
                 adapter.notifyDataSetChanged();
