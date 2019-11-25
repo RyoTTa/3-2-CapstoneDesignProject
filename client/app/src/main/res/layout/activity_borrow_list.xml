@@ -11,7 +11,7 @@
         android:layout_height="35dp"
         android:background="#E5EBEB"
         android:gravity="center"
-        android:text="빌려준 물건"
+        android:text="빌린 물건"
         android:textSize="8pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,18 +28,6 @@
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="@+id/page_header" />
-
-    <ImageView
-        android:id="@+id/map_button"
-        android:layout_width="53dp"
-        android:layout_height="54dp"
-        android:src="@drawable/listmapbtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -184,6 +184,7 @@ public class ShareListActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(ShareListActivity.this, ItemDetailActivity.class);
                 intent.putExtra("item_object",item);
+                intent.putExtra("bucket","false");
 
                 startActivity(intent);
             }

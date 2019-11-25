@@ -6,6 +6,7 @@ import android.location.Geocoder;
 import android.media.Image;
 import android.media.Rating;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -29,6 +30,9 @@ import org.bson.types.ObjectId;
 import org.w3c.dom.Text;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -44,10 +48,17 @@ public class ReservationInfoActivity extends AppCompatActivity {
     private TextView user_name;
     private RatingBar user_star;
     private TextView user_reviewnum;
+    private TextView date;
     private FromServerImage newImage = new FromServerImage();
 
     private ImageView pay;
+    private ImageView complete;
     private Item item;
+
+    private String start_date;
+    private String end_date;
+
+    private final int GET_DATE_INFO = 300;
 
     //mongoDB
     private String MongoDB_IP = "15.164.51.129";
@@ -61,23 +72,38 @@ public class ReservationInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation_info);
 
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+
         item_photo = (ImageView)findViewById(R.id.item_photo);
         item_title = (TextView)findViewById(R.id.item_title);
-        item_date = (TextView)findViewById(R.id.item_reservation_date);
+        date = (TextView) findViewById(R.id.reservation_date);
         item_price =(TextView)findViewById(R.id.item_reservation_price);
         item_content = (TextView)findViewById(R.id.item_content);
         item_location = (TextView)findViewById(R.id.location);
         item_category = (TextView)findViewById(R.id.category);
+        complete = (ImageView)findViewById(R.id.complete);
         user_name = (TextView)findViewById(R.id.user_name);
         user_star = (RatingBar)findViewById(R.id.revinfo_star);
         user_reviewnum = (TextView)findViewById(R.id.review_number);
+        pay = (ImageView)findViewById(R.id.pay);
 
         Intent intent = getIntent();
         //get all the data passed
         item = (Item)intent.getSerializableExtra("item_object");
+
+        String type = intent.getStringExtra("type");
+        if(type.equals("reservation_info")){
+            //compelte btn 안보여야함
+            complete.setVisibility(View.GONE);
+
+        }else if(type.equals("borrow_detail")){
+            //pay btn 안보이고 위에 타이틀 안보여야함
+            item_title.setVisibility(View.GONE);
+            pay.setVisibility(View.GONE);
+        }
+
         item_photo.setImageBitmap(newImage.getImage(item.getFilepath()));
         item_title.setText(item.getItem_name());
-        //item_date =
         //item_price =
         item_content.setText(item.getContent());
         LatLng add = new LatLng(item.getLatitude(), item.getLongitude());
@@ -103,8 +129,6 @@ public class ReservationInfoActivity extends AppCompatActivity {
         user_star.setRating(setstar);
         user_reviewnum.setText("("+Integer.toString((int)star_count)+")");
 
-        pay = (ImageView)findViewById(R.id.pay);
-
         pay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +138,45 @@ public class ReservationInfoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        complete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),RegisterReviewActivity.class);
+                intent.putExtra("reviewee",item.getOwner_email());
+                intent.putExtra("item_id",item.getItem_id());
+                startActivity(intent);
+            }
+        });
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GET_DATE_INFO) {
+            String selectdate = "   " + data.getStringExtra("date");
+            start_date = data.getStringExtra("startdate");
+            end_date = data.getStringExtra("enddate");
+            SimpleDateFormat fm = new SimpleDateFormat(("yyyy-MM-dd"));
+            try {
+                Date start_temp = fm.parse(start_date);
+                Date end_temp = fm.parse(end_date);
+
+                if(start_temp.compareTo(item.getAvailableFrom()) == 0){
+
+                }
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Log.d("날짜",start_date + end_date);
+            date.setText(selectdate);
+        }
+    }
+
+    public void selectDate(View v)
+    {
+        Intent intent = new Intent(getApplicationContext(),SelectDateActivity.class);
+        startActivityForResult(intent,GET_DATE_INFO);
     }
 
     public String getCurrentAddress(LatLng latlng) {

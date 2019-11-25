@@ -129,7 +129,7 @@ public class ChattingActivity extends AppCompatActivity {
 
     private void openChat(String chatName) {
         // 리스트 어댑터 생성 및 세팅
-       final ChattingAdapter adapter = new ChattingAdapter(this,mItems);
+        final ChattingAdapter adapter = new ChattingAdapter(this,mItems);
 
 
 

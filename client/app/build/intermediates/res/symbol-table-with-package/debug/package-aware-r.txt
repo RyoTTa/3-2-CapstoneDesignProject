@@ -1401,7 +1401,6 @@ id item_image
 id item_name
 id item_photo
 id item_price_per_day
-id item_reservation_date
 id item_reservation_price
 id item_title
 id item_touch_helper_previous_elevation
@@ -1488,6 +1487,7 @@ id register_price
 id register_review_content
 id register_review_star
 id register_title
+id reservation_date
 id rev_content
 id rev_user_name
 id rev_user_star
