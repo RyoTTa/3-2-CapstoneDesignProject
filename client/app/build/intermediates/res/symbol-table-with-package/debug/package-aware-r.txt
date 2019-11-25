@@ -1337,6 +1337,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detail_start_date
 id dimensions
 id direct
 id disableHome
@@ -1379,6 +1380,8 @@ id id_input
 id ifRoom
 id image
 id imageView
+id imageView2
+id imageView3
 id info
 id invisible
 id italic
@@ -1389,10 +1392,10 @@ id item_detail_item_image
 id item_detail_item_location
 id item_detail_item_name
 id item_detail_item_price
+id item_detail_item_price2
 id item_detail_owner_detail
 id item_detail_owner_image
 id item_detail_owner_name
-id item_detail_owner_rating
 id item_grid_view
 id item_image
 id item_name
@@ -1415,7 +1418,6 @@ id light
 id line1
 id line3
 id listMode
-id listView
 id list_item
 id listview_alterdialog_list
 id ll_month_header
@@ -1458,6 +1460,7 @@ id notification_main_column
 id notification_main_column_container
 id outline
 id owner_star
+id owner_star_num
 id packed
 id page_header
 id parallax

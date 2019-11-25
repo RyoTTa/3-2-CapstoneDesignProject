@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Locale;
 
@@ -102,7 +104,9 @@ public class ItemDetailActivity extends AppCompatActivity {
         //Owner info, TODO
         ImageView owner_image = (ImageView)findViewById(R.id.item_detail_owner_image);
         TextView owner_name = (TextView)findViewById(R.id.item_detail_owner_name);
-        TextView owner_rating = (TextView)findViewById(R.id.item_detail_owner_rating);
+        RatingBar owner_star = (RatingBar)findViewById(R.id.owner_star);
+        TextView owner_star_num = (TextView)findViewById(R.id.owner_star_num);
+        TextView start_date = (TextView)findViewById(R.id.detail_start_date);
 
         //for DB connection, replace this with proper solution later..
         if (Build.VERSION.SDK_INT >= 23) {
@@ -141,8 +145,16 @@ public class ItemDetailActivity extends AppCompatActivity {
         DBObject dbObj2 = collection2.findOne(query2);
         owner_image.setImageResource(R.drawable.owner_sample);
         String name = dbObj2.get("name").toString();
+        float star_save = Float.parseFloat(dbObj2.get("star_save").toString());
+        float star_count = Float.parseFloat(dbObj2.get("star_count").toString());
         owner_name.setText(name);
-        owner_rating.setText("4.5 / 5");
+
+        float setstar = star_save/star_count;
+        owner_star.setRating(setstar);
+        owner_star_num.setText("("+Integer.toString((int)star_count)+")");
+        SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
+        start_date.setText(sdf.format(item.getAvailableFrom())+" ~ " +sdf.format(item.getAvailableTo()));
+
 
         question.setOnClickListener(new View.OnClickListener() {
             @Override

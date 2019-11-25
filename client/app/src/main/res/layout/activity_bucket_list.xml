@@ -1,40 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:keepScreenOn="true" >
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/page_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/chat_username"
-            android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:background="#E5EBEB"
-            android:text="찜 목록"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            android:gravity="center"/>
+        android:layout_height="35dp"
+        android:background="#E5EBEB"
+        android:gravity="center"
+        android:text="찜 목록"
+        android:textSize="8pt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="-28dp" />
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical">
+    <GridView
+        android:id="@+id/item_grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:horizontalSpacing="5dp"
+        android:numColumns="2"
+        android:verticalSpacing="5dp"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/page_header"
+        tools:layout_editor_absoluteX="16dp" />
 
-            <ListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:transcriptMode="alwaysScroll"
-                android:divider="@android:color/transparent">
-            </ListView>
 
-        </LinearLayout>
-
-    </LinearLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -69,7 +69,7 @@ public class Item implements Comparable<Item>,Serializable {
 
     public void setContent(String content) {        this.content = content;    }
 
-    public String getOwner_name(){ return this.owner_email; }
+    public String getOwner_email(){ return this.owner_email; }
 
     @Override
     public int compareTo(Item i) {

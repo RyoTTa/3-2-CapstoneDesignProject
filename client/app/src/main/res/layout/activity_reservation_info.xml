@@ -134,11 +134,10 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/resv_info_cate"
+                    android:layout_height="17dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="3dp"
-                    />
+                    android:src="@drawable/resv_info_cate" />
 
                 <TextView
                     android:id="@+id/category"
@@ -220,11 +219,8 @@
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-
-
         </LinearLayout>
     </ScrollView>
-
 
 
     <ImageView
@@ -238,17 +234,4 @@
         android:layout_centerInParent="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"/>
-
-    <ImageView
-        android:id="@+id/complete"
-        android:layout_width="65dp"
-        android:layout_height="35dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_gravity="right"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/completebtn" />
-
 </RelativeLayout>
