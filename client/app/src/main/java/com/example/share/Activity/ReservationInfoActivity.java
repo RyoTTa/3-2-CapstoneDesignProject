@@ -150,6 +150,18 @@ public class ReservationInfoActivity extends AppCompatActivity {
         });
     }
 
+    //editting.....수정중
+    public String getHangulCategory(String englishCategory){
+
+        String[] text = {"장소", "공구", "음향기기", "의료", "유아용품", "기타"};
+        String[] text_send = {"place", "tool", "sound_equipment", "medical_equipment", "baby_goods", "etc"};
+
+        //for(int i=0 ; i < )
+
+        return "";
+    }
+
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);

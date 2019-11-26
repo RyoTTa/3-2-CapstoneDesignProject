@@ -37,7 +37,7 @@
 
             <TextView
                 android:id="@+id/register_category"
-                android:layout_width="399dp"
+                android:layout_width="335dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:background="@drawable/border"
@@ -52,7 +52,7 @@
 
             <EditText
                 android:id="@+id/register_title"
-                android:layout_width="399dp"
+                android:layout_width="335dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
@@ -63,7 +63,7 @@
 
             <EditText
                 android:id="@+id/register_price"
-                android:layout_width="399dp"
+                android:layout_width="335dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
@@ -76,7 +76,7 @@
 
             <TextView
                 android:id="@+id/register_date"
-                android:layout_width="399dp"
+                android:layout_width="335dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:background="@drawable/border"
@@ -91,7 +91,7 @@
 
             <TextView
                 android:id="@+id/register_location"
-                android:layout_width="399dp"
+                android:layout_width="335dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:background="@drawable/border"
@@ -106,7 +106,7 @@
 
             <EditText
                 android:id="@+id/register_content"
-                android:layout_width="399dp"
+                android:layout_width="335dp"
                 android:layout_height="205dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="7dp"
