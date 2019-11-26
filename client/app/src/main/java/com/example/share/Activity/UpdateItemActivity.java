@@ -189,7 +189,7 @@ public class UpdateItemActivity extends AppCompatActivity {
             latitude = data.getStringExtra("latitude");
             longitude = data.getStringExtra("longitude");
             Log.d("위치",latitude + longitude);
-        } else if (requestCode == GET_DATE_INFO) {
+        } else if (requestCode == GET_DATE_INFO && data != null) {
             String selectdate = "   " + data.getStringExtra("date");
             start_date = data.getStringExtra("startdate");
             end_date = data.getStringExtra("enddate");

@@ -153,7 +153,8 @@ public class ReservationInfoActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == GET_DATE_INFO) {
+        if (requestCode == GET_DATE_INFO && data !=null) {
+
             String selectdate = "   " + data.getStringExtra("date");
             start_date = data.getStringExtra("startdate");
             end_date = data.getStringExtra("enddate");

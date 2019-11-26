@@ -299,7 +299,7 @@ public class ItemListActivity extends AppCompatActivity {
 
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == DATE_INFO) {
+        if (requestCode == DATE_INFO && data != null) {
 
             if(data != null) {
            /* dateFrom=data.getStringExtra("syear")+"-"+data.getStringExtra("smonth")+"-"+data.getStringExtra("sday");
