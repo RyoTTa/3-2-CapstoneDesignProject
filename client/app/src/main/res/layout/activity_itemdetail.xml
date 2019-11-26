@@ -107,7 +107,7 @@
             android:layout_width="351dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="itemDetail"
+            android:text="상세 정보"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.433"
             app:layout_constraintStart_toStartOf="parent"
@@ -182,7 +182,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
-            android:text="Owner Detail"
+            android:text="소유자 정보"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
 

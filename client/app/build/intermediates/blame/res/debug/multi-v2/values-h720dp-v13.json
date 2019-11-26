@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "outputFile": "C:\\Users\\Joohan Park\\Desktop\\CDP1\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.2.aar\\b0f3c92984478ec450ba396604975720\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\Joohan Park\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.2.aar\\ef5c443a3d7228d2307099d42bb602df\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
