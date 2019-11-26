@@ -616,7 +616,10 @@ attr zOrderOnTop
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
+bool enable_system_alarm_service_default
+bool enable_system_job_service_default
 bool mtrl_btn_textappearance_all_caps
+bool workmanager_test_configuration
 color abc_background_cache_hint_selector_material_dark
 color abc_background_cache_hint_selector_material_light
 color abc_btn_colored_borderless_text_material
@@ -1162,6 +1165,7 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_stat_ic_notification
 drawable ic_triangle_green
 drawable ic_triangle_white
 drawable id_box
@@ -1798,9 +1802,13 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string default_notification_channel_id
+string default_notification_channel_name
 string default_web_client_id
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string fcm_fallback_notification_channel_label
+string fcm_message
 string firebase_database_url
 string gcm_defaultSenderId
 string google_api_key
@@ -1811,7 +1819,11 @@ string google_storage_bucket
 string hide_bottom_view_on_scroll_behavior
 string invalid_password
 string invalid_username
+string log_token
 string login_failed
+string msg_subscribe_failed
+string msg_subscribed
+string msg_token_fmt
 string mtrl_chip_close_icon_content_description
 string password_toggle_content_description
 string path_password_eye
@@ -1821,8 +1833,10 @@ string path_password_strike_through
 string project_id
 string prompt_email
 string prompt_password
+string quickstart_message
 string search_menu_title
 string status_bar_notification_info_overflow
+string subscribe_to_weather
 string title_activity_login2
 string welcome
 style AlertDialog_AppCompat

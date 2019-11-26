@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.CheckBox;
@@ -14,10 +15,16 @@ import android.widget.ImageView;
 import org.json.JSONObject;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.share.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -38,7 +45,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class LoginActivity extends AppCompatActivity {
-
     EditText email_input;
     EditText pw_input;
 
@@ -49,7 +55,8 @@ public class LoginActivity extends AppCompatActivity {
     private String COLLECTION_NAME = "users";
     private String user_name;
     private SharedPreferences pref;
-
+    private static final String TAG = "LoginActivity";
+    private String token ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,6 +76,28 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // [START retrieve_current_token]
+                FirebaseInstanceId.getInstance().getInstanceId()
+                        .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                                if (!task.isSuccessful()) {
+                                    Log.w(TAG, "getInstanceId failed", task.getException());
+                                    return;
+                                }
+
+                                // Get new Instance ID token
+                                token = task.getResult().getToken();
+
+                                // Log and toast
+                                String msg = getString(R.string.msg_token_fmt, token);
+                                Log.d(TAG, msg);
+                                //Toast.makeText(LoginActivity.this, msg, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                // [END retrieve_current_token]
+
+
                 new LoginActivity.JSONTask().execute("http://ec2-15-164-51-129.ap-northeast-2.compute.amazonaws.com:3000/login");
             }
         });
@@ -93,7 +122,7 @@ public class LoginActivity extends AppCompatActivity {
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.accumulate("email",email_input.getText().toString());
                 jsonObject.accumulate("password", pw_input.getText().toString());
-
+                jsonObject.accumulate("token", token);
                 HttpURLConnection con = null;
                 BufferedReader reader = null;
 
