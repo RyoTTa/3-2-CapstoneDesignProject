@@ -38,6 +38,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class LoginActivity extends AppCompatActivity {
+
     EditText email_input;
     EditText pw_input;
 

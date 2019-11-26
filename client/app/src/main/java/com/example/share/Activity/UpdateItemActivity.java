@@ -183,7 +183,7 @@ public class UpdateItemActivity extends AppCompatActivity {
             path = getPathFromURI(data.getData());
             selectedImageUri = data.getData();
             photo.setImageURI(selectedImageUri);
-        } else if (requestCode == GET_LOCATION_INFO) {
+        } else if (requestCode == GET_LOCATION_INFO && data != null ) {
             String address = "   " + data.getStringExtra("address");
             location.setText(address);
             latitude = data.getStringExtra("latitude");
