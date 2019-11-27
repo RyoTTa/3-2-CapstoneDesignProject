@@ -41,6 +41,7 @@
         android:layout_below="@+id/id_input"
         android:layout_centerHorizontal="true"
         android:hint="패스워드"
+        android:password="true"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/pw_box"
         app:layout_constraintEnd_toEndOf="@+id/pw_box"

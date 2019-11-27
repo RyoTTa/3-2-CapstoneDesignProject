@@ -22,6 +22,7 @@ public class ChatroomAdapter extends BaseAdapter {
     private TextView name;
     private TextView content;
 
+    public ChatroomAdapter(){}
     public ChatroomAdapter(Context context, ArrayList<ChatroomlistItem> mItems){
         this.mItems = mItems;
         this.inflater = (LayoutInflater)context.getSystemService(

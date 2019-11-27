@@ -28,10 +28,12 @@ import java.util.ArrayList;
 
 public class ChatListActivity extends AppCompatActivity {
 
+
     private ListView chatlist_view;
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference = firebaseDatabase.getReference();
     private ArrayList<ChatroomlistItem> mItems;
+    private ArrayList<ChatroomlistItem> send_rooms;
     private SharedPreferences pref;
     private ChatroomlistItem chatroomlistitem;
     //mongoDB
@@ -48,13 +50,17 @@ public class ChatListActivity extends AppCompatActivity {
         chatlist_view = (ListView)findViewById(R.id.chatroomlistview);
         mItems = new ArrayList<ChatroomlistItem>();
         showChatList();
+        send_rooms = new ArrayList<ChatroomlistItem>();
+        chatroomlistitem = new ChatroomlistItem();
 
         chatlist_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(),ChattingActivity.class);
-                intent.putExtra("owner_email",chatroomlistitem.getOther_email());
-                intent.putExtra("owner_name",chatroomlistitem.getOther_name());
+
+                Log.d("jihyee", Integer.toString(position));
+                intent.putExtra("owner_email",send_rooms.get(position).getOther_email());
+                intent.putExtra("owner_name",send_rooms.get(position).getOther_name());
                 startActivity(intent);
             }
         });
@@ -93,9 +99,10 @@ public class ChatListActivity extends AppCompatActivity {
                     chatroomlistitem.setOther_name(dbObj.get("name").toString());
                     chatroomlistitem.setOther_email(email2);
                     chatroomlistitem.setRoomName(chatroomlistitem.getOther_name());
-
                     Log.d("jihye",chatroomlistitem.getOther_email());
                     adapter.add(chatroomlistitem.getOther_name(),chatroomlistitem.getMessage());
+                    send_rooms.add(chatroomlistitem);
+
                     Log.d("jihye","add 후 : "+adapter.getCount());
                     adapter.notifyDataSetChanged();
                     chatlist_view.setAdapter(adapter);
@@ -105,8 +112,9 @@ public class ChatListActivity extends AppCompatActivity {
                     chatroomlistitem.setOther_name(dbObj.get("name").toString());
                     chatroomlistitem.setOther_email(email1);
                     chatroomlistitem.setRoomName(chatroomlistitem.getOther_name());
-
                     adapter.add(chatroomlistitem.getOther_name(),chatroomlistitem.getMessage());
+                    send_rooms.add(chatroomlistitem);
+
                     Log.d("jihye","add 후 : "+adapter.getCount());
                     adapter.notifyDataSetChanged();
                     chatlist_view.setAdapter(adapter);
