@@ -46,6 +46,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -71,6 +72,7 @@ public class ItemDetailActivity extends AppCompatActivity {
 
     private ImageView editBtn;
     private ImageView deleteBtn;
+    private TextView headr;
 
     private String user_email;
 
@@ -88,8 +90,9 @@ public class ItemDetailActivity extends AppCompatActivity {
         item_id = item.getItem_id();
         bucket_check = intent.getStringExtra("bucket");
 
+        headr = (TextView)findViewById(R.id.page_header);
 
-
+        headr.setText("상품 상세 정보");
         //get all the layout
         ImageView item_image = (ImageView)findViewById(R.id.item_detail_item_image);
         TextView item_name = (TextView)findViewById(R.id.item_detail_item_name);
@@ -97,6 +100,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         question = (ImageView)findViewById(R.id.btn_question);
         reservation = (ImageView)findViewById(R.id.btn_reservation);
         bucketheart = (ImageView)findViewById(R.id.bucketheart);
+
         //item detail, TODO
         TextView item_detail = (TextView)findViewById(R.id.item_detail_item_detail);
         TextView item_location = (TextView)findViewById(R.id.item_detail_item_location);
@@ -107,6 +111,8 @@ public class ItemDetailActivity extends AppCompatActivity {
         RatingBar owner_star = (RatingBar)findViewById(R.id.owner_star);
         TextView owner_star_num = (TextView)findViewById(R.id.owner_star_num);
         TextView start_date = (TextView)findViewById(R.id.detail_start_date);
+
+
 
         //for DB connection, replace this with proper solution later..
         if (Build.VERSION.SDK_INT >= 23) {
@@ -143,7 +149,7 @@ public class ItemDetailActivity extends AppCompatActivity {
         BasicDBObject query2 = new BasicDBObject();
         query2.put("email", owner_email);
         DBObject dbObj2 = collection2.findOne(query2);
-        owner_image.setImageResource(R.drawable.owner_sample);
+        owner_image.setImageResource(R.drawable.sample_pro);
         String name = dbObj2.get("name").toString();
         float star_save = Float.parseFloat(dbObj2.get("star_save").toString());
         float star_count = Float.parseFloat(dbObj2.get("star_count").toString());
@@ -177,12 +183,25 @@ public class ItemDetailActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        /*공유자 리뷰 정보*/
+        owner_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(ItemDetailActivity.this, ReviewActivity.class);
+                intent.putExtra("user_email",owner_email);
+                intent.putExtra("user_name",name);
+                startActivity(intent);
+            }
+        });
 
         /** Delete and Edit button */
         editBtn = (ImageView)findViewById(R.id.edit_item_button) ;
         deleteBtn = (ImageView)findViewById(R.id.delete_item_button) ;
         if(user_email.equals(owner_email)){
-
+            question.setVisibility(View.INVISIBLE);
+            reservation.setVisibility(View.INVISIBLE);
+            bucketheart.setVisibility(View.INVISIBLE);
             /**Edit Button*/
             //TODO: below asynctask
             editBtn.setOnClickListener(new View.OnClickListener() {

@@ -42,12 +42,11 @@ public class HomeActivity extends AppCompatActivity {
         medical_equimentButton = (ImageButton)findViewById(R.id.medical);
         baby_goodsButton = (ImageButton)findViewById(R.id.child);
 
-
         etcButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
-                intent.putExtra("category", "etc");
+                intent.putExtra("category", "5");
                 intent.putExtra("UserEmail",UserEmail);
                 startActivity(intent);
             }
@@ -57,7 +56,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
-                intent.putExtra("category", "place");
+                intent.putExtra("category", "0");
                 intent.putExtra("UserEmail",UserEmail);
                 startActivity(intent);
             }
@@ -67,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
-                intent.putExtra("category", "tool");
+                intent.putExtra("category", "1");
                 intent.putExtra("UserEmail",UserEmail);
                 startActivity(intent);
             }
@@ -77,7 +76,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
-                intent.putExtra("category", "sound_equipment");
+                intent.putExtra("category", "2");
                 intent.putExtra("UserEmail",UserEmail);
                 startActivity(intent);
             }
@@ -87,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
-                intent.putExtra("category", "medical_equipment");
+                intent.putExtra("category", "3");
                 intent.putExtra("UserEmail",UserEmail);
                 startActivity(intent);
             }
@@ -97,12 +96,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(HomeActivity.this, ItemListActivity.class);
-                intent.putExtra("category", "baby_goods");
+                intent.putExtra("category", "4");
                 intent.putExtra("UserEmail",UserEmail);
                 startActivity(intent);
             }
 
         });
+
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);  //bottom navigation bar 에서 메뉴 클릭 리스너
 
@@ -133,6 +133,8 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+
+
     }
 
 }

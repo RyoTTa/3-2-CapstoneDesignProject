@@ -179,12 +179,12 @@ public class RegisterItemActivity extends AppCompatActivity {
             jsonObject.accumulate("category",send_category);
             jsonObject.accumulate("contents",content.getText().toString());
             jsonObject.accumulate("owner_email",UserEmail);
-            jsonObject.accumulate("image_path",UserEmail+title.getText().toString()+".jpeg");
+            jsonObject.accumulate("image_path",UserEmail+title.getText().toString()+start_date+end_date+".jpeg");
 
             JSONObject jsonObject2 = new JSONObject();
             File file = new File(path);
 
-            jsonObject2.accumulate("image_path",UserEmail+title.getText().toString()+".jpeg");
+            jsonObject2.accumulate("image_path",UserEmail+title.getText().toString()+start_date+end_date+".jpeg");
             Bitmap temp = decodeFile(file);
             jsonObject2.accumulate("data",getStringFromBitmap(temp));
             Log.d("file path : ",getStringFromBitmap(temp)+"testtesttest",null);
@@ -368,7 +368,7 @@ public class RegisterItemActivity extends AppCompatActivity {
             BitmapFactory.decodeStream(new FileInputStream(f), null, o);
 
             // The new size we want to scale to
-            final int REQUIRED_SIZE=600;
+            final int REQUIRED_SIZE=550;
 
             // Find the correct scale value. It should be the power of 2.
             int scale = 1;

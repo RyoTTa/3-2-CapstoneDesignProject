@@ -81,7 +81,7 @@ public class ItemListActivity extends AppCompatActivity {
     private String BUCKET_NAME = "buckets";
 
     //
-    private String currentCategory = "tool";
+    private Integer currentCategory;
 
     //
     private Bitmap bmimg;
@@ -125,10 +125,10 @@ public class ItemListActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        currentCategory = intent.getStringExtra("category");
+        currentCategory = Integer.decode(intent.getStringExtra("category"));
 
         page_header = (TextView) findViewById(R.id.page_header);
-        page_header.setText(currentCategory);
+        page_header.setText(text[currentCategory]);
 
 
 
@@ -147,7 +147,7 @@ public class ItemListActivity extends AppCompatActivity {
 
         //Check Data in Database with query
         BasicDBObject query = new BasicDBObject();
-        query.put("category",currentCategory);
+        query.put("category",text_send[currentCategory]);
         query.put("reservation",false);
         DBCursor cursor = collection.find(query);
         while (cursor.hasNext()) {
@@ -183,7 +183,7 @@ public class ItemListActivity extends AppCompatActivity {
                  */
 
                 //TODO: change to imagePath
-                if (currentCategory.equals(newCategory)) {
+                if (text_send[currentCategory].equals(newCategory)) {
                     items_from_db.add(new Item(new_id, newName, newPPD, newLatitude, newLongitude,
                             newDateFrom, newDateTo, newFilePath,newCategory,newContent,newOwner_email));
                 }

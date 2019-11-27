@@ -65,6 +65,8 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyPageActivity.this, ReviewActivity.class);
+                intent.putExtra("user_email",UserEmail);
+                intent.putExtra("user_name",UserName);
                 startActivity(intent);
 
             }

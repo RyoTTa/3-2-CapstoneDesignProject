@@ -1,5 +1,6 @@
 package com.example.share.Activity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -50,6 +51,7 @@ public class ReviewActivity extends AppCompatActivity {
     private DBCollection reviewcollection;
     private DBCollection usercollection;
     String user_email;
+    String user_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,18 +64,18 @@ public class ReviewActivity extends AppCompatActivity {
         myName = (TextView)findViewById(R.id.review_username);
         mItems = new ArrayList<ReviewItem>();
 
+        Intent intent = getIntent();
+
+        user_email = intent.getStringExtra("user_email");
+        user_name = intent.getStringExtra("user_name");
+
+
         //db열기
         MongoClient mongoClient = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
         DB db = mongoClient.getDB(DB_NAME);
         reviewcollection = db.getCollection(REVIEW_COLLECTION);
         usercollection = db.getCollection(USER_COLLECTION);
         BasicDBObject query = new BasicDBObject();
-
-        //유저정보찾기
-        pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
-        user_email = pref.getString("user_email",null);
-        String user_name = pref.getString("user_name",null);
-
 
         //db에서 찾기
         query.put("email",user_email);

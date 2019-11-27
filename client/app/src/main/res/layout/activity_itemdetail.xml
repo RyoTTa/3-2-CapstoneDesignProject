@@ -9,40 +9,53 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/page_header"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="#E5EBEB"
+            android:gravity="center"
+            android:text="하위"
+            android:textSize="8pt"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="-28dp" />
+
+
         <ImageView
             android:id="@+id/edit_item_button"
             android:layout_width="50dp"
             android:layout_height="23dp"
-            android:layout_marginStart="210dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/page_header"
+            app:layout_constraintEnd_toEndOf="@+id/page_header"
+            app:layout_constraintHorizontal_bias="0.789"
+            app:layout_constraintStart_toStartOf="@+id/page_header"
+            app:layout_constraintTop_toTopOf="@+id/page_header"
+            app:layout_constraintVertical_bias="0.5"
             app:srcCompat="@drawable/item_edit_icon" />
 
         <ImageView
             android:id="@+id/delete_item_button"
             android:layout_width="50dp"
             android:layout_height="23dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/edit_item_button"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.064"
+            app:layout_constraintHorizontal_bias="0.611"
             app:layout_constraintStart_toEndOf="@+id/edit_item_button"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/edit_item_button"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/item_delete_icon" />
 
         <ImageView
             android:id="@+id/item_detail_item_image"
             android:layout_width="323dp"
             android:layout_height="291dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/page_header"
             app:srcCompat="@android:color/transparent" />
-
-        \
 
         <TextView
             android:id="@+id/item_detail_item_name"
@@ -182,7 +195,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="28dp"
             android:layout_marginTop="8dp"
-            android:text="소유자 정보"
+            android:text="공유자 정보"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
@@ -190,6 +203,7 @@
             android:id="@+id/item_detail_owner_image"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:src="@drawable/sample_pro"
             android:layout_marginStart="28dp"
             android:layout_marginTop="28dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -238,7 +252,7 @@
             android:layout_marginTop="600dp"
             android:src="@drawable/btn_question"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.343"
+            app:layout_constraintHorizontal_bias="0.307"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -249,7 +263,7 @@
             android:layout_marginTop="600dp"
             android:src="@drawable/btn_reservation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.474"
+            app:layout_constraintHorizontal_bias="0.415"
             app:layout_constraintStart_toEndOf="@+id/btn_question"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -264,7 +278,6 @@
             app:layout_constraintTop_toBottomOf="@+id/item_detail_item_image"
             app:layout_constraintVertical_bias="0.044"
             app:srcCompat="@drawable/heart" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

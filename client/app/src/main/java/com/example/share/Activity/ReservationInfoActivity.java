@@ -108,19 +108,18 @@ public class ReservationInfoActivity extends AppCompatActivity {
             BasicDBObject resv_query = new BasicDBObject();
             resv_query.put("item_id",item.getItem_id());
             DBObject resv_dbObj = collection.findOne(resv_query);
-            String r_dateS = resv_dbObj.get("date_start").toString();
-            String r_dateE = resv_dbObj.get("date_end").toString();
-            date.setText(r_dateS+"~"+r_dateE);
+            Date r_dateS = (Date)resv_dbObj.get("date_start");
+            Date r_dateE = (Date)resv_dbObj.get("date_end");
             SimpleDateFormat fm = new SimpleDateFormat(("yyyy-MM-dd"));
-            try {
-                Date start = fm.parse(r_dateS);
-                Date end = fm.parse(r_dateE);
-                long diffDay = ((end.getTime() - start.getTime()) / (24*60*60*1000) + 1)  * Integer.decode(item.getItem_price_per_day());
-                item_price.setText(diffDay + "원");
 
-            } catch (ParseException e) {
-                e.printStackTrace();
-            }
+
+            String start = fm.format(r_dateS);
+            String end = fm.format(r_dateE);
+            date.setText(start+"~"+end);
+            long diffDay = ((r_dateE.getTime() - r_dateS.getTime()) / (24*60*60*1000) + 1)  * Integer.decode(item.getItem_price_per_day());
+            item_price.setText(diffDay + "원");
+
+
 
         }
 

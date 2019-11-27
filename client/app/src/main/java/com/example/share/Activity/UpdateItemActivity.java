@@ -221,12 +221,12 @@ public class UpdateItemActivity extends AppCompatActivity {
             jsonObject.accumulate("contents",content.getText().toString());
             jsonObject.accumulate("executed_user",UserEmail);
             jsonObject.accumulate("old_image_path",UserEmail+item.getItem_name()+".jpeg");
-            jsonObject.accumulate("new_image_path",UserEmail+title.getText().toString()+".jpeg");
+            jsonObject.accumulate("new_image_path",UserEmail+title.getText().toString()+start_date+end_date+".jpeg");
 
             JSONObject jsonObject2 = new JSONObject();
             File file = new File(path);
 
-            jsonObject2.accumulate("image_path",UserEmail+title.getText().toString()+".jpeg");
+            jsonObject2.accumulate("image_path",UserEmail+title.getText().toString()+start_date+end_date+".jpeg");
             Bitmap temp = decodeFile(file);
             jsonObject2.accumulate("data",getStringFromBitmap(temp));
             Log.d("file path : ",getStringFromBitmap(temp)+"testtesttest",null);
