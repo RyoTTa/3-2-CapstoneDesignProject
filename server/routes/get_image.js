@@ -5,7 +5,7 @@ module.exports = function(router,fs) {
 
     router.route('/get_image').post(function(req,res){
         console.log('/get_image 요청');
-        var file_name = req.body.file_name;
+        var file_name = req.body.image_path;
         console.log(file_name);
         console.log(typeof(file_name));
         var path = "./images/";
@@ -21,9 +21,6 @@ module.exports = function(router,fs) {
                     res.end();
                 });
             }else{
-            //res.writeHead(200,{"Content-Type":"image/png"});
-           // res.write('true');
-           // res.write(typeof(data));
             res.write(data);
             res.end();
             }

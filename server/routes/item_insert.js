@@ -15,7 +15,8 @@ module.exports = function(router,app) {
             'image_path' : req.body.image_path,
             'category' : req.body.category,
             'contents' : req.body.contents,
-            'owner_email' : req.body.owner_email
+            'owner_email' : req.body.owner_email,
+            'reservation' : false
         });
         item.save(function(err){
             if (err) {

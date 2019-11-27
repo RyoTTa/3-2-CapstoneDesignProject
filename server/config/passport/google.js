@@ -8,7 +8,7 @@ module.exports = function(app, passport) {
     	clientSecret: config.google.clientSecret,
     	callbackURL: config.google.callbackURL
 	}, function(accessToken, refreshToken, profile, done) {
-		console.log('passport의 google 호출됨.');
+		console.log('passport의 facebook 호출됨.');
 		console.dir(profile);
 		
 		var options = {

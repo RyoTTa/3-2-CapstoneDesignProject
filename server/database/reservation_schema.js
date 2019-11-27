@@ -7,12 +7,11 @@ var Schema = {};
 Schema.createSchema = function(mongoose) {
 	//스키마 정의
 	var ReservationSchema = mongoose.Schema({
-        item_id : {type:Number}
+        item_id : {type:String}
 		, owner_email : {type:String,'default':''}
-		, brower_email : {type:String,'default':''}
-        , start_date : {type:Date,index: {unique: false},'default':Date.now}
-        , end_date : {type:Date,index: {unique: false},'default':Date.now}
-        , end_to : {type:String}
+		, borrower_email : {type:String,'default':''}
+        , date_start : {type:Date,index: {unique: false},'default':Date.now}
+        , date_end : {type:Date,index: {unique: false},'default':Date.now}
     });
 	return ReservationSchema;
 };

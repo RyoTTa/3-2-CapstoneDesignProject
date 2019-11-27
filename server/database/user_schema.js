@@ -15,6 +15,9 @@ Schema.createSchema = function(mongoose) {
 	    , created_at: {type: Date, index: {unique: false}, 'default': Date.now}
 	    , updated_at: { type: Date, index: { unique: false }, 'default': Date.now }
 		, authentication : {type: String, 'default':'false'}
+		, star_save : {type: Number, 'default' : 0}
+		, star_count : {type: Number,'default':0}
+		, token : {type : String, 'default' : ''}
 		//, randomvalue : {type:String,'default':'000000'}
 	});
 	

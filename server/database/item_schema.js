@@ -8,8 +8,8 @@ Schema.createSchema = function(mongoose) {
 
 	var ItemSchema = mongoose.Schema({
 		name : {type:String,'default':''}
-		, available_date_start : {type:Date,index:{unique:false}}
-		, available_date_end : {type:Date,index:{unique:false}}
+		, available_date_start : {type:Date}
+		, available_date_end : {type:Date}
 		, price_per_date : {type:String,'default':0}
 		, latitude:{type:String,'default':''}
 		, longitude:{type:String,'default':''}
@@ -18,6 +18,8 @@ Schema.createSchema = function(mongoose) {
 		, owner_email:{type:String,'default':''}
 		, owner_phone_number:{type:String,'default':''}
 		, contents : {type:String,'default':''}
+		, reservation : {type : Boolean, 'defalut' : false}
+		, borrower : {type:String,'default':''}
     });
 	return ItemSchema;
 };

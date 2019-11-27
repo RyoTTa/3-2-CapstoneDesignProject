@@ -107,8 +107,31 @@ item_insert(router,app);
 var authentication_email = require('./routes/authentication_email');
 authentication_email(router,app);
 
+var reservation = require('./routes/reservation');
+reservation(router,app);
 var send_email = require('./routes/send_email');
 send_email(router,app);
+
+var update_star = require('./routes/update_star');
+update_star(router,app);
+
+var item_delete = require('./routes/item_delete');
+item_delete(router,app);
+
+var review_insert = require('./routes/review_insert');
+review_insert(router,app);
+
+var item_update = require('./routes/item_update');
+item_update(router,app);
+
+var check_qrcode = require('./routes/check_qrcode');
+check_qrcode(router, app);
+
+var bucket= require('./routes/bucket');
+bucket(router,app);
+
+var fcm_push = require('./routes/fcm_push');
+fcm_push(router,app);
 //===== 404 에러 페이지 처리 =====//
 var errorHandler = expressErrorHandler({
  static: {
@@ -157,7 +180,7 @@ var server = http.createServer(app).listen(app.get('port'), function(){
 	database.init(app, config);
    
 });
-
+/*
 // 로그인 아이디 매핑 (로그인 ID -> 소켓 ID)
 var login_ids = {};
 
@@ -221,3 +244,5 @@ function sendResponse(socket, command, code, message) {
 	var statusObj = {command: command, code: code, message: message};
 	socket.emit('response', statusObj);
 }
+
+*/

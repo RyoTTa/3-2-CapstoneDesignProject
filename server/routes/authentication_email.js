@@ -18,5 +18,4 @@ module.exports = function(router,app) {
         });
         res.send('인증완료');
     });
-
 };

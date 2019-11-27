@@ -7,7 +7,7 @@ module.exports = new LocalStrategy({
 		passReqToCallback : true   // 이 옵션을 설정하면 아래 콜백 함수의 첫번째 파라미터로 req 객체 전달됨
 	}, function(req, email, password, done) { 
 		console.log('passport의 local-login 호출됨 : ' + email + ', ' + password);
-		
+		console.log(req.body);
 		var database = req.app.get('database');
 	    database.UserModel.findOne({ 'email' :  email }, function(err, user) {
 	    	if (err) { return done(err); }
@@ -31,6 +31,21 @@ module.exports = new LocalStrategy({
 			}
 			// 정상인 경우
 			console.log('계정과 비밀번호가 일치함.');
+			console.log(Date.now());
+			user.updated_at=Date.now(); // last login 시간을 기억한다.
+			// req.body.token 이 null 이면 안된다.
+			// req.body.token 이 값이 있어야하고 값이 있을때 
+			if(req.body.token){
+				if(user.token!=req.body.token){
+					user.token=req.body.token;
+				}
+			}
+			user.save(function(err){
+				if(err)
+				{
+					throw err;
+				}
+			});
 			return done(null, user);  // 검증 콜백에서 두 번째 파라미터의 값을 user 객체로 넣어 인증 성공한 것으로 처리
 	    });
 
