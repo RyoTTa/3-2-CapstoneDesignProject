@@ -5,11 +5,6 @@
     android:layout_height="match_parent"
     android:keepScreenOn="true" >
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/reservation_info_title"
-        android:background="#E5EBEB"/>
 
     <ScrollView
         android:id="@+id/scrollView"

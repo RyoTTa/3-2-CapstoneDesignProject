@@ -4,6 +4,23 @@
             "outputFile": "/Users/jihye/Share_Service_Platform_5-/client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-uk/values-uk.xml",
             "map": [
                 {
+                    "source": "/Users/jihye/.gradle/caches/transforms-1/files-1.1/jetified-zxing-android-embedded-3.6.0.aar/f661a333552bf2b270925eb292e59315/res/values-uk/values-uk.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,117,164,306",
+                        "endColumns": "61,46,141,121",
+                        "endOffsets": "112,159,301,423"
+                    },
+                    "to": {
+                        "startLines": "50,51,52,53",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5819,5881,5928,6070",
+                        "endColumns": "61,46,141,121",
+                        "endOffsets": "5876,5923,6065,6187"
+                    }
+                },
+                {
                     "source": "/Users/jihye/.gradle/caches/transforms-1/files-1.1/appcompat-1.0.2.aar/b8a4f5b4b7a99a46c9563cc930d409de/res/values-uk/values-uk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",

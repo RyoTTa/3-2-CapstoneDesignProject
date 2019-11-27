@@ -32,7 +32,8 @@
         app:layout_constraintEnd_toEndOf="@+id/id_box"
         app:layout_constraintHorizontal_bias="0.759"
         app:layout_constraintStart_toStartOf="@+id/id_box"
-        app:layout_constraintTop_toTopOf="@+id/id_box" />
+        app:layout_constraintTop_toTopOf="@+id/id_box"
+        app:layout_constraintVertical_bias="0.533" />
 
     <EditText
         android:id="@+id/pw_input"
@@ -41,89 +42,62 @@
         android:layout_below="@+id/id_input"
         android:layout_centerHorizontal="true"
         android:hint="패스워드"
-        android:password="true"
         android:inputType="text"
+        android:password="true"
         app:layout_constraintBottom_toBottomOf="@+id/pw_box"
         app:layout_constraintEnd_toEndOf="@+id/pw_box"
         app:layout_constraintHorizontal_bias="0.782"
         app:layout_constraintStart_toStartOf="@+id/pw_box"
         app:layout_constraintTop_toTopOf="@+id/pw_box" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="107dp"
-        android:layout_height="38dp"
-        android:layout_below="@+id/loginButton"
-        android:layout_centerHorizontal="true"
-        android:text="자동 로그인"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pw_box"
-        app:layout_constraintVertical_bias="0.161" />
-
-    <ImageButton
-        android:id="@+id/loginButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:padding="0dp"
-        android:src="@drawable/login_button"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
-        app:layout_constraintEnd_toEndOf="@+id/pw_box"
-        app:layout_constraintHorizontal_bias="0.666"
-        app:layout_constraintStart_toStartOf="@+id/pw_box"
-        app:layout_constraintTop_toBottomOf="@+id/pw_box"
-        app:layout_constraintVertical_bias="0.421" />
-
     <ImageButton
         android:id="@+id/signupButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:clickable="true"
         android:padding="0dp"
         android:src="@drawable/signup_button"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox"
         app:layout_constraintEnd_toEndOf="@+id/pw_box"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.341"
         app:layout_constraintStart_toStartOf="@+id/pw_box"
-        app:layout_constraintTop_toBottomOf="@+id/pw_box"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintTop_toBottomOf="@+id/pw_box" />
 
     <ImageView
         android:id="@+id/id_box"
         android:layout_width="305dp"
         android:layout_height="76dp"
-        android:src="@drawable/id_box"
+        android:src="@drawable/loginbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.575"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintVertical_bias="0.187" />
 
     <ImageView
         android:id="@+id/pw_box"
         android:layout_width="304dp"
         android:layout_height="76dp"
-        android:src="@drawable/pw_box"
+        android:src="@drawable/pwbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/id_box"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.076" />
 
     <ImageButton
-        android:id="@+id/google_button"
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
         android:padding="0dp"
-        android:src="@drawable/google_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox"
-        app:layout_constraintVertical_bias="0.075" />
+        android:src="@drawable/login_button"
+        app:layout_constraintEnd_toEndOf="@+id/pw_box"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="@+id/pw_box"
+        app:layout_constraintTop_toBottomOf="@+id/pw_box" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

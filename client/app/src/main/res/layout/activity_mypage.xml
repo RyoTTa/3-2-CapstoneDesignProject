@@ -110,7 +110,7 @@
         app:layout_constraintHorizontal_bias="0.124"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/share2"
-        app:layout_constraintVertical_bias="0.315" />
+        app:layout_constraintVertical_bias="0.326" />
 
     <TextView
         android:id="@+id/mypage_user_name"

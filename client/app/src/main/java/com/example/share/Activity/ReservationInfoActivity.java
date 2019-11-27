@@ -40,7 +40,6 @@ public class ReservationInfoActivity extends AppCompatActivity {
 
     private ImageView item_photo;
     private TextView item_title;
-    private TextView item_date;
     private TextView item_price;
     private TextView item_content;
     private TextView item_location;
@@ -64,8 +63,8 @@ public class ReservationInfoActivity extends AppCompatActivity {
     private String MongoDB_IP = "15.164.51.129";
     private int MongoDB_PORT = 27017;
     private String DB_NAME = "local";
-    private String ITEM_COLLECTION = "items";
     private String USER_COLLECTION= "users";
+    private String RESV_COLLECTION= "reservations";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +86,11 @@ public class ReservationInfoActivity extends AppCompatActivity {
         user_reviewnum = (TextView)findViewById(R.id.review_number);
         pay = (ImageView)findViewById(R.id.pay);
 
+        //Connect to MongoDB
+        MongoClient mongoClient = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
+        DB db = mongoClient.getDB(DB_NAME);
+        DBCollection collection = db.getCollection(USER_COLLECTION);
+
         Intent intent = getIntent();
         //get all the data passed
         item = (Item)intent.getSerializableExtra("item_object");
@@ -98,23 +102,38 @@ public class ReservationInfoActivity extends AppCompatActivity {
 
         }else if(type.equals("borrow_detail")){
             //pay btn 안보이고 위에 타이틀 안보여야함
-            item_title.setVisibility(View.GONE);
             pay.setVisibility(View.GONE);
+            date.setClickable(false);
+            collection = db.getCollection(RESV_COLLECTION);
+            BasicDBObject resv_query = new BasicDBObject();
+            resv_query.put("item_id",item.getItem_id());
+            DBObject resv_dbObj = collection.findOne(resv_query);
+            String r_dateS = resv_dbObj.get("date_start").toString();
+            String r_dateE = resv_dbObj.get("date_end").toString();
+            date.setText(r_dateS+"~"+r_dateE);
+            SimpleDateFormat fm = new SimpleDateFormat(("yyyy-MM-dd"));
+            try {
+                Date start = fm.parse(r_dateS);
+                Date end = fm.parse(r_dateE);
+                long diffDay = ((end.getTime() - start.getTime()) / (24*60*60*1000) + 1)  * Integer.decode(item.getItem_price_per_day());
+                item_price.setText(diffDay + "원");
+
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
         }
 
         item_photo.setImageBitmap(newImage.getImage(item.getFilepath()));
         item_title.setText(item.getItem_name());
-        //item_price =
+
         item_content.setText(item.getContent());
         LatLng add = new LatLng(item.getLatitude(), item.getLongitude());
         String set_address = getCurrentAddress(add);
         item_location.setText(set_address);
         item_category.setText(item.getCategory());
 
-        //Connect to MongoDB
-        MongoClient mongoClient = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
-        DB db = mongoClient.getDB(DB_NAME);
-        DBCollection collection = db.getCollection( USER_COLLECTION);
+        collection = db.getCollection(USER_COLLECTION);
 
         /** Qurey 2: get Owner Info */
 

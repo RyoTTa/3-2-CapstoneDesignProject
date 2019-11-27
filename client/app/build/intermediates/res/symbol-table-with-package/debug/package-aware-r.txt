@@ -613,6 +613,15 @@ attr windowMinWidthMajor
 attr windowMinWidthMinor
 attr windowNoTitle
 attr zOrderOnTop
+attr zxing_framing_rect_height
+attr zxing_framing_rect_width
+attr zxing_possible_result_points
+attr zxing_preview_scaling_strategy
+attr zxing_result_view
+attr zxing_scanner_layout
+attr zxing_use_texture_view
+attr zxing_viewfinder_laser
+attr zxing_viewfinder_mask
 bool abc_action_bar_embed_tabs
 bool abc_allow_stacked_button_bar
 bool abc_config_actionMenuItemAllCaps
@@ -779,6 +788,16 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color tooltip_background_dark
 color tooltip_background_light
+color zxing_custom_possible_result_points
+color zxing_custom_result_view
+color zxing_custom_viewfinder_laser
+color zxing_custom_viewfinder_mask
+color zxing_possible_result_points
+color zxing_result_view
+color zxing_status_text
+color zxing_transparent
+color zxing_viewfinder_laser
+color zxing_viewfinder_mask
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1110,6 +1129,7 @@ drawable avd_show_password
 drawable border
 drawable border_top_bottom
 drawable btn_add
+drawable btn_qrcode
 drawable btn_question
 drawable btn_register_review
 drawable btn_reservation
@@ -1182,6 +1202,7 @@ drawable listdatebtn
 drawable listlocationbtn
 drawable listmapbtn
 drawable login_button
+drawable loginbox
 drawable logo
 drawable logogo_round
 drawable maain
@@ -1214,6 +1235,7 @@ drawable pay_title
 drawable paybtn
 drawable pw_box
 drawable pw_icon
+drawable pwbox
 drawable register_btn
 drawable register_item_title
 drawable registerbtn
@@ -1299,6 +1321,7 @@ id catv_end
 id catv_middle
 id catv_start
 id center
+id centerCrop
 id center_horizontal
 id center_vertical
 id chains
@@ -1312,7 +1335,6 @@ id chatlist_username
 id chatlist_userphoto
 id chatroomlistview
 id chattinglistView
-id checkBox
 id checkbox
 id child
 id chronometer
@@ -1363,13 +1385,14 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id fitCenter
+id fitXY
 id fixed
 id fl_navigation_buttons_bar
 id forever
 id friday
 id ghost_view
 id gone
-id google_button
 id group_divider
 id groups
 id home
@@ -1479,6 +1502,7 @@ id progress_circular
 id progress_horizontal
 id pw_box
 id pw_input
+id qrcode
 id radio
 id range
 id register_button
@@ -1533,6 +1557,7 @@ id send_selections
 id share1
 id share2
 id share3
+id share4
 id shortcut
 id showCustom
 id showHome
@@ -1610,6 +1635,19 @@ id wide
 id withText
 id wrap
 id wrap_content
+id zxing_back_button
+id zxing_barcode_scanner
+id zxing_barcode_surface
+id zxing_camera_closed
+id zxing_camera_error
+id zxing_decode
+id zxing_decode_failed
+id zxing_decode_succeeded
+id zxing_possible_result_points
+id zxing_preview_failed
+id zxing_prewiew_size_ready
+id zxing_status_view
+id zxing_viewfinder_view
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1663,6 +1701,7 @@ layout activity_borrow_list
 layout activity_bucket_list
 layout activity_chat_list
 layout activity_chatting
+layout activity_createqrcode
 layout activity_home
 layout activity_itemdetail
 layout activity_itemlist
@@ -1733,11 +1772,14 @@ layout view_day_of_week
 layout view_month
 layout view_other_day
 layout view_selection_bar_range
+layout zxing_barcode_scanner
+layout zxing_capture
 menu menu
 menu menu_bottom
 mipmap captone_ic
 mipmap ic_launcher
 mipmap ic_launcher_round
+raw zxing_beep
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1839,6 +1881,10 @@ string status_bar_notification_info_overflow
 string subscribe_to_weather
 string title_activity_login2
 string welcome
+string zxing_app_name
+string zxing_button_ok
+string zxing_msg_camera_framework_bug
+string zxing_msg_default_status
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2342,6 +2388,7 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_Toolbar
 style Widget_Support_CoordinatorLayout
+style zxing_CaptureTheme
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth
@@ -2423,3 +2470,6 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+styleable zxing_camera_preview zxing_framing_rect_height zxing_framing_rect_width zxing_preview_scaling_strategy zxing_use_texture_view
+styleable zxing_finder zxing_possible_result_points zxing_result_view zxing_viewfinder_laser zxing_viewfinder_mask
+styleable zxing_view zxing_scanner_layout

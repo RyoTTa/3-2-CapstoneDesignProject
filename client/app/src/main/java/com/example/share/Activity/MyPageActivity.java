@@ -18,6 +18,7 @@ public class MyPageActivity extends AppCompatActivity {
     private ImageButton sharing_button;
     private ImageButton borrow_button;
     private ImageButton review_button;
+    private ImageButton qrcode_button;
     private TextView user_email;
     private TextView user_name;
 
@@ -32,7 +33,7 @@ public class MyPageActivity extends AppCompatActivity {
         sharing_button = (ImageButton)findViewById(R.id.share1);
         borrow_button = (ImageButton)findViewById(R.id.share2);
         review_button = (ImageButton)findViewById(R.id.share3);
-
+        qrcode_button = (ImageButton)findViewById(R.id.share4);
 
         user_email = (TextView)findViewById(R.id.mypage_user_email);
         user_name = (TextView)findViewById(R.id.mypage_user_name);
@@ -64,6 +65,15 @@ public class MyPageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MyPageActivity.this, ReviewActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        qrcode_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MyPageActivity.this, CreateQRcodeActivity.class);
                 startActivity(intent);
 
             }
