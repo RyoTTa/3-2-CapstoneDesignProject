@@ -175,14 +175,20 @@ public class ReservationInfoActivity extends AppCompatActivity {
                 Date start_temp = fm.parse(start_date);
                 Date end_temp = fm.parse(end_date);
 
-                if(start_temp.compareTo(item.getAvailableFrom()) == 0){
-
+                if(start_temp.compareTo(item.getAvailableFrom()) == 1 && end_temp.compareTo(item.getAvailableTo()) == -1){
+                    date.setText(selectdate);
+                    long diffDay = ((end_temp.getTime() - start_temp.getTime()) / (24*60*60*1000) + 1)  * Integer.decode(item.getItem_price_per_day());
+                    item_price.setText(diffDay + "원");
+                }
+                else{
+                    date.setText("잘못된 날짜입니다.");
+                    item_price.setText("--" + "원");
                 }
             } catch (ParseException e) {
                 e.printStackTrace();
             }
             Log.d("날짜",start_date + end_date);
-            date.setText(selectdate);
+
         }
     }
 
