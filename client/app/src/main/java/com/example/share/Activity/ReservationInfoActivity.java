@@ -56,6 +56,7 @@ public class ReservationInfoActivity extends AppCompatActivity {
 
     private String start_date;
     private String end_date;
+    String name="test";
 
     private final int GET_DATE_INFO = 300;
 
@@ -112,6 +113,23 @@ public class ReservationInfoActivity extends AppCompatActivity {
             Date r_dateE = (Date)resv_dbObj.get("date_end");
             SimpleDateFormat fm = new SimpleDateFormat(("yyyy-MM-dd"));
 
+            String start = fm.format(r_dateS);
+            String end = fm.format(r_dateE);
+            date.setText(start+"~"+end);
+            long diffDay = ((r_dateE.getTime() - r_dateS.getTime()) / (24*60*60*1000) + 1)  * Integer.decode(item.getItem_price_per_day());
+            item_price.setText(diffDay + "원");
+        }else if(type.equals("complete_detail")){
+            complete.setVisibility(View.GONE);
+            pay.setVisibility(View.GONE);
+            date.setClickable(false);
+
+            collection = db.getCollection(RESV_COLLECTION);
+            BasicDBObject resv_query = new BasicDBObject();
+            resv_query.put("item_id",item.getItem_id());
+            DBObject resv_dbObj = collection.findOne(resv_query);
+            Date r_dateS = (Date)resv_dbObj.get("date_start");
+            Date r_dateE = (Date)resv_dbObj.get("date_end");
+            SimpleDateFormat fm = new SimpleDateFormat(("yyyy-MM-dd"));
 
             String start = fm.format(r_dateS);
             String end = fm.format(r_dateE);
@@ -119,8 +137,8 @@ public class ReservationInfoActivity extends AppCompatActivity {
             long diffDay = ((r_dateE.getTime() - r_dateS.getTime()) / (24*60*60*1000) + 1)  * Integer.decode(item.getItem_price_per_day());
             item_price.setText(diffDay + "원");
 
-
-
+            TextView member_title =(TextView)findViewById(R.id.member_title);
+            member_title.setText("대여자 정보");
         }
 
         item_photo.setImageBitmap(newImage.getImage(item.getFilepath()));
@@ -136,16 +154,41 @@ public class ReservationInfoActivity extends AppCompatActivity {
 
         /** Qurey 2: get Owner Info */
 
-        BasicDBObject query = new BasicDBObject();
-        query.put("email", item.getOwner_email());
-        DBObject dbObj = collection.findOne(query);
-        String name = dbObj.get("name").toString();
-        float star_save = Float.parseFloat(dbObj.get("star_save").toString());
-        float star_count = Float.parseFloat(dbObj.get("star_count").toString());
-        user_name.setText(name);
-        float setstar = star_save/star_count;
-        user_star.setRating(setstar);
-        user_reviewnum.setText("("+Integer.toString((int)star_count)+")");
+        if(type.equals("complete_detail")) {
+            MongoClient mongoClient2 = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
+            DB db2 = mongoClient2.getDB(DB_NAME);
+            DBCollection collection2 = db2.getCollection(RESV_COLLECTION);
+
+            //Check Data in Database with query
+            BasicDBObject query2 = new BasicDBObject();
+            query2.put("item_id",item.getItem_id());
+            DBObject resv_dbObj = collection2.findOne(query2);
+
+            String borrower_email = resv_dbObj.get("borrower_email").toString();
+
+            BasicDBObject query = new BasicDBObject();
+            query.put("email", borrower_email);
+            DBObject dbObj = collection.findOne(query);
+            name = dbObj.get("name").toString();
+            float star_save = Float.parseFloat(dbObj.get("star_save").toString());
+            float star_count = Float.parseFloat(dbObj.get("star_count").toString());
+            float setstar = star_save / star_count;
+            user_name.setText(name);
+            user_star.setRating(setstar);
+            user_reviewnum.setText("(" + Integer.toString((int) star_count) + ")");
+        }else {
+            BasicDBObject query = new BasicDBObject();
+            query.put("email", item.getOwner_email());
+            DBObject dbObj = collection.findOne(query);
+            name = dbObj.get("name").toString();
+            float star_save = Float.parseFloat(dbObj.get("star_save").toString());
+            float star_count = Float.parseFloat(dbObj.get("star_count").toString());
+            float setstar = star_save / star_count;
+            user_name.setText(name);
+            user_star.setRating(setstar);
+            user_reviewnum.setText("(" + Integer.toString((int) star_count) + ")");
+        }
+
 
         pay.setOnClickListener(new View.OnClickListener() {
             @Override

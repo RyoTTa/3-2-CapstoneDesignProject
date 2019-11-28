@@ -189,7 +189,18 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            if (result.equals("true")) {    //로그인 성공시 Home Intents 시작 메소드
+            if (result == null) {    //로그인 성공시 Home Intents 시작 메소드
+                AlertDialog.Builder alert = new AlertDialog.Builder(LoginActivity.this);
+                alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();     //닫기
+                    }
+                });
+                alert.setMessage("서버와의 통신이 원활하지 않습니다.");
+                alert.show();
+            }
+            else if(result.equals("true")){
                 LoginCheck();
             }
             else{   //로그인 실패시 에러 메시지 출력

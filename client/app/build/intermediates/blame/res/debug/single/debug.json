@@ -1980,6 +1980,10 @@
         "source": "C:\\Users\\PC\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0.aar\\249c30cd6bb7a5944a44c8fd24e2e542\\res\\color\\mtrl_btn_text_btn_ripple_color.xml"
     },
     {
+        "merged": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\res\\merged\\debug\\drawable_mypage_complete.png.flat",
+        "source": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\src\\main\\res\\drawable\\mypage_complete.png"
+    },
+    {
         "merged": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\res\\merged\\debug\\drawable_item_sample_ipad.png.flat",
         "source": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\src\\main\\res\\drawable\\item_sample_ipad.png"
     },
@@ -2058,6 +2062,10 @@
     {
         "merged": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_complete_list.xml.flat",
+        "source": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\src\\main\\res\\layout\\activity_complete_list.xml"
     },
     {
         "merged": "C:\\GitKraken\\Share_Service_Platform_5-\\client\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",

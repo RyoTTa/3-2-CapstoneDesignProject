@@ -79,6 +79,7 @@
         <activity android:name="com.example.share.Activity.BorrowListActivity" />
         <activity android:name="com.example.share.Activity.MyPageActivity" />
         <activity android:name="com.example.share.Activity.UpdateItemActivity" />
+        <activity android:name="com.example.share.Activity.CompleteActivity" />
         <activity
             android:name="com.example.share.Activity.RegisterReviewActivity"
             android:theme="@style/Theme.MyDialog" />

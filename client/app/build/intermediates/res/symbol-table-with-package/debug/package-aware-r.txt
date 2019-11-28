@@ -1214,6 +1214,7 @@ drawable menu_mypage
 drawable menu_pay
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable mypage_complete
 drawable mypage_review
 drawable mypage_shared2_ic
 drawable mypage_shred_ic
@@ -1455,6 +1456,7 @@ id mapsend
 id masked
 id media_actions
 id medical
+id member_title
 id message
 id middle
 id mini
@@ -1558,6 +1560,7 @@ id share1
 id share2
 id share3
 id share4
+id share5
 id shortcut
 id showCustom
 id showHome
@@ -1701,6 +1704,7 @@ layout activity_borrow_list
 layout activity_bucket_list
 layout activity_chat_list
 layout activity_chatting
+layout activity_complete_list
 layout activity_createqrcode
 layout activity_home
 layout activity_itemdetail

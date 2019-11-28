@@ -38,6 +38,7 @@
         <activity android:name=".Activity.BorrowListActivity" />
         <activity android:name=".Activity.MyPageActivity" />
         <activity android:name=".Activity.UpdateItemActivity" />
+        <activity android:name=".Activity.CompleteActivity" />
         <activity
             android:name=".Activity.RegisterReviewActivity"
             android:theme="@style/Theme.MyDialog" />

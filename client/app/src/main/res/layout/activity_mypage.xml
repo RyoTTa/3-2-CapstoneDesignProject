@@ -78,7 +78,6 @@
         app:layout_constraintVertical_bias="0.0" />
 
 
-
     <ImageButton
         android:id="@+id/share3"
         android:layout_width="74dp"
@@ -90,11 +89,10 @@
         android:src="@drawable/mypage_review"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.866"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/share2"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintVertical_bias="0.323" />
 
     <ImageButton
         android:id="@+id/share4"
@@ -105,12 +103,28 @@
         android:padding="0dp"
         android:scaleType="fitCenter"
         android:src="@drawable/btn_qrcode"
+        app:layout_constraintBottom_toBottomOf="@+id/share3"
+        app:layout_constraintEnd_toEndOf="@+id/share1"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/share1"
+        app:layout_constraintTop_toTopOf="@+id/share3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/share5"
+        android:layout_width="74dp"
+        android:layout_height="72dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
+        android:padding="0dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mypage_complete"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.124"
+        app:layout_constraintHorizontal_bias="0.866"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/share2"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/mypage_user_name"

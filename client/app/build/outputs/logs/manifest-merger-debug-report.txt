@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
-INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
-INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
-INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
+INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
+INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
+INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
 MERGED from [com.github.applikeysolutions:cosmocalendar:1.0.4] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\jetified-cosmocalendar-1.0.4.aar\70eb5ab29a105e32914c7ee9aeea9a1b\AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\249c30cd6bb7a5944a44c8fd24e2e542\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.0.2] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.2.aar\b0f3c92984478ec450ba396604975720\AndroidManifest.xml:17:1-22:12
@@ -73,20 +73,20 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\PC\.gradle\c
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\a8db1a02f99546598a6ef329e7d845a6\AndroidManifest.xml:17:1-22:12
 MERGED from [com.koushikdutta.async:androidasync:3.0.8] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\androidasync-3.0.8.aar\ad5a701801205ac66eb5ae1f5d9f8196\AndroidManifest.xml:2:1-16:12
 MERGED from [com.google.firebase:firebase-database-collection:17.0.0] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\firebase-database-collection-17.0.0.aar\9920e93bb8fd0dc14ac7f787e4f569a2\AndroidManifest.xml:2:1-7:12
-INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
-INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
-INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
+INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
+INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
+INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
 	package
 		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:3:5-32
 		INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml
 		INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
 		INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-89:12
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:1-90:12
 		INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:2:11-69
@@ -125,7 +125,7 @@ ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidMan
 	android:name
 		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:9:22-76
 application
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:11:5-87:19
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:11:5-88:19
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\249c30cd6bb7a5944a44c8fd24e2e542\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\249c30cd6bb7a5944a44c8fd24e2e542\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.3.aar\56545e2d70dfe94f3355ba912620775e\AndroidManifest.xml:9:5-20
@@ -292,86 +292,90 @@ activity#com.example.share.Activity.UpdateItemActivity
 ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:40:9-65
 	android:name
 		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:40:19-62
+activity#com.example.share.Activity.CompleteActivity
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:41:9-63
+	android:name
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:41:19-60
 activity#com.example.share.Activity.RegisterReviewActivity
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:41:9-43:53
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:42:9-44:53
 	android:theme
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:43:13-50
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:44:13-50
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:42:13-60
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:43:13-60
 activity#com.example.share.Activity.ReviewActivity
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:44:9-61
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:45:9-61
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:44:19-58
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:45:19-58
 activity#com.example.share.Activity.MainActivity
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:45:9-51:20
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:46:9-52:20
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:45:19-56
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:46:19-56
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:46:13-50:29
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:47:13-51:29
 action#android.intent.action.MAIN
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:47:17-69
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:48:17-69
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:47:25-66
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:48:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:49:17-77
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:50:17-77
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:49:27-74
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:50:27-74
 service#com.example.share.Activity.MyFirebaseMessagingService
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:54:9-60:19
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:55:9-61:19
 	android:exported
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:56:13-37
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:57:13-37
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:55:13-64
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:56:13-64
 intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:57:13-59:29
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:58:13-60:29
 action#com.google.firebase.MESSAGING_EVENT
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:58:17-78
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:59:17-78
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:58:25-75
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:59:25-75
 meta-data#com.google.firebase.messaging.default_notification_icon
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:63:9-65:68
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:64:9-66:68
 	android:resource
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:65:13-65
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:66:13-65
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:64:13-83
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:65:13-83
 meta-data#com.google.firebase.messaging.default_notification_color
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:68:9-70:53
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:69:9-71:53
 	android:resource
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:70:13-50
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:71:13-50
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:69:13-84
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:70:13-84
 meta-data#com.google.firebase.messaging.default_notification_channel_id
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:71:9-73:71
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:72:9-74:71
 	android:value
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:73:13-68
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:74:13-68
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:72:13-89
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:73:13-89
 meta-data#firebase_messaging_auto_init_enabled
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:74:9-76:37
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:75:9-77:37
 	android:value
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:76:13-34
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:77:13-34
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:75:13-64
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:76:13-64
 meta-data#firebase_analytics_collection_enabled
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:77:9-79:37
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:78:9-80:37
 	android:value
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:79:13-34
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:80:13-34
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:78:13-65
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:79:13-65
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:81:9-83:55
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:82:9-84:55
 	android:value
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:83:13-52
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:84:13-52
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:82:13-58
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:83:13-58
 meta-data#com.google.android.gms.version
-ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:84:9-86:69
+ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:85:9-87:69
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b45fc5eaf90174bd033540996d4a1d7b\AndroidManifest.xml:23:9-25:69
 MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\PC\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\b45fc5eaf90174bd033540996d4a1d7b\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:86:13-66
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:87:13-66
 	android:name
-		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:85:13-58
+		ADDED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml:86:13-58
 uses-sdk
 INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\GitKraken\Share_Service_Platform_5-\client\app\src\main\AndroidManifest.xml
