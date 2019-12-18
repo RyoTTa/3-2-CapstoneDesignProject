@@ -61,7 +61,7 @@
                         android:id="@+id/chat_content"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/chatting_background_blue"
+                        android:background="@drawable/border2"
                         android:paddingHorizontal="18dp"
                         android:paddingVertical="8dp"
                         android:text="ㅇㅅㅇ 거래하자구요."

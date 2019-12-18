@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -29,7 +30,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.content.CursorLoader;
 
+import com.example.share.Chatting.ChattingActivity;
 import com.example.share.R;
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
+import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
+import com.mongodb.MongoClient;
+import com.mongodb.ServerAddress;
 
 import org.json.JSONObject;
 
@@ -80,9 +89,14 @@ public class RegisterItemActivity extends AppCompatActivity {
     Uri selectedImageUri;
     String path;
 
-    int[] image = {R.drawable.select, R.drawable.select, R.drawable.select, R.drawable.select, R.drawable.select};
+    int[] image = {R.drawable.select, R.drawable.select, R.drawable.select, R.drawable.select, R.drawable.select, R.drawable.select};
     String[] text = {"장소", "공구", "음향기기", "의료", "유아용품", "기타"};
     String[] text_send = {"place", "tool", "sound_equipment", "medical_equipment", "baby_goods", "etc"};
+
+    private String MongoDB_IP = "15.164.51.129";
+    private int MongoDB_PORT = 27017;
+    private String DB_NAME = "local";
+    private String COLLECTION_NAME = "keywords";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -255,6 +269,8 @@ public class RegisterItemActivity extends AppCompatActivity {
 
                 StringBuffer buffer2 = new StringBuffer();
 
+                keywordAlarm();
+
                 String line2 = "";
                 while((line2 = reader2.readLine()) != null){
                     buffer2.append(line2);
@@ -343,8 +359,6 @@ public class RegisterItemActivity extends AppCompatActivity {
         startActivityForResult(intent,GET_DATE_INFO);
     }
 
-
-
     public void selectLocation(View v)
     {
         Intent intent = new Intent(getApplicationContext(),MapsMarkerRegiActivity.class);
@@ -368,7 +382,7 @@ public class RegisterItemActivity extends AppCompatActivity {
             BitmapFactory.decodeStream(new FileInputStream(f), null, o);
 
             // The new size we want to scale to
-            final int REQUIRED_SIZE=550;
+            final int REQUIRED_SIZE=450;
 
             // Find the correct scale value. It should be the power of 2.
             int scale = 1;
@@ -392,5 +406,107 @@ public class RegisterItemActivity extends AppCompatActivity {
         byte[] b = byteArrayBitmapStream.toByteArray();
         encodedImage = Base64.encodeToString(b, Base64.DEFAULT);
         return encodedImage;
+    }
+
+    private void keywordAlarm(){
+        MongoClient mongoClient = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
+        DB db = mongoClient.getDB(DB_NAME);
+        DBCollection collection = db.getCollection(COLLECTION_NAME);
+        BasicDBObject query = new BasicDBObject();
+
+        DBCursor cursor = collection.find();
+
+        while (cursor.hasNext()) {
+            DBObject dbo = (BasicDBObject) cursor.next();
+            try {
+                String new_keyword = dbo.get("keyword").toString();
+                String new_email = dbo.get("email").toString();
+                if(title.getText().toString().contains(new_keyword)==true && new_email.equals(UserEmail) == false){
+                    new RegisterItemActivity.JSONTask().execute("http://ec2-15-164-51-129.ap-northeast-2.compute.amazonaws.com:3000/fcm_push",new_email, "\""+ new_keyword  + "\""+ " 키워드에 대한 \n" + "\"" + title.getText().toString()+ "\"" + " 상품 알림");
+                }
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public class JSONTask extends AsyncTask<String, String, String> {
+
+        @Override
+        protected String doInBackground(String... urls) {
+            try {
+                //JSONObject를 만들고 key value 형식으로 값을 저장해준다.
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.accumulate("my_email", "admin@naver.com");
+                jsonObject.accumulate("your_email", urls[1]);
+                jsonObject.accumulate("contents", urls[2]);
+                HttpURLConnection con = null;
+                BufferedReader reader = null;
+
+                try {
+                    //URL url = new URL("http://192.168.25.16:3000/users");
+                    URL url = new URL(urls[0]);
+                    //연결을 함
+                    con = (HttpURLConnection) url.openConnection();
+
+                    con.setRequestMethod("POST");//POST방식으로 보냄
+                    con.setRequestProperty("Cache-Control", "no-cache");//캐시 설정
+                    con.setRequestProperty("Content-Type", "application/json");//application JSON 형식으로 전송
+
+
+                    con.setRequestProperty("Accept", "text/html");//서버에 response 데이터를 html로 받음
+                    con.setDoOutput(true);//Outstream으로 post 데이터를 넘겨주겠다는 의미
+                    con.setDoInput(true);//Inputstream으로 서버로부터 응답을 받겠다는 의미
+                    con.connect();
+
+                    //서버로 보내기위해서 스트림 만듬
+                    OutputStream outStream = con.getOutputStream();
+                    //버퍼를 생성하고 넣음
+                    BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outStream));
+                    writer.write(jsonObject.toString());
+                    writer.flush();
+                    writer.close();//버퍼를 받아줌
+
+                    //서버로 부터 데이터를 받음
+                    InputStream stream = con.getInputStream();
+
+                    reader = new BufferedReader(new InputStreamReader(stream));
+
+                    StringBuffer buffer = new StringBuffer();
+
+                    String line = "";
+                    while ((line = reader.readLine()) != null) {
+                        buffer.append(line);
+                    }
+
+                    return buffer.toString();//서버로 부터 받은 값을 리턴해줌 아마 OK!!가 들어올것임
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } finally {
+                    if (con != null) {
+                        con.disconnect();
+                    }
+                    try {
+                        if (reader != null) {
+                            reader.close();//버퍼를 닫아줌
+                        }
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+        }
     }
 }

@@ -47,6 +47,7 @@ import java.net.URL;
 public class LoginActivity extends AppCompatActivity {
     EditText email_input;
     EditText pw_input;
+    CheckBox autoLoginCheck;
 
     //mongoDB
     private String MongoDB_IP = "15.164.51.129";
@@ -54,16 +55,37 @@ public class LoginActivity extends AppCompatActivity {
     private String DB_NAME = "local";
     private String COLLECTION_NAME = "users";
     private String user_name;
-    private SharedPreferences pref;
     private static final String TAG = "LoginActivity";
     private String token ;
+
+    private String UserEmail;
+    private String UserName;
+    private String UserPassword;
+    private Integer AutoLogin;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        SharedPreferences pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
+
+        UserEmail = pref.getString("user_email",null);
+        UserName = pref.getString("user_name",null);
+        UserPassword = pref.getString("user_password",null);
+        AutoLogin = pref.getInt("autoLogin",0);
 
         email_input = (EditText)findViewById(R.id.email_input);
         pw_input = (EditText)findViewById(R.id.pw_input);
+        autoLoginCheck = (CheckBox)findViewById(R.id.autoLogin);
+        autoLoginCheck.setOnClickListener(new CheckBox.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast2 = Toast.makeText(getApplicationContext(), "자동로그인을 선택하셨습니다", Toast.LENGTH_SHORT); toast2.show();
+
+            }
+        }) ;
 
         ImageButton loginButton = (ImageButton)findViewById(R.id.loginButton);
         ImageButton signupButton = (ImageButton)findViewById(R.id.signupButton);
@@ -72,6 +94,13 @@ public class LoginActivity extends AppCompatActivity {
 
         findViewById(R.id.email_input).bringToFront();
         findViewById(R.id.pw_input).bringToFront();
+
+        if(AutoLogin == 1){
+            email_input.setText(UserEmail);
+            pw_input.setText(UserPassword);
+            LoginCheck_Checked();
+            finish();
+        }
 
         // [START retrieve_current_token]
         FirebaseInstanceId.getInstance().getInstanceId()
@@ -201,7 +230,11 @@ public class LoginActivity extends AppCompatActivity {
                 alert.show();
             }
             else if(result.equals("true")){
-                LoginCheck();
+                if (autoLoginCheck.isChecked()) {
+                    LoginCheck_Checked();
+                } else {
+                    LoginCheck_Unchecked();
+                }
             }
             else{   //로그인 실패시 에러 메시지 출력
                 AlertDialog.Builder alert = new AlertDialog.Builder(LoginActivity.this);
@@ -216,7 +249,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
     }
-    public void LoginCheck(){ // 로그인 성공시 Home Intents 시작
+    public void LoginCheck_Unchecked(){ // 로그인 성공시 Home Intents 시작
 
         if (Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -244,19 +277,78 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
 
+        SharedPreferences pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
 
-        pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
         SharedPreferences.Editor email_edit = pref.edit();
         SharedPreferences.Editor name_edit = pref.edit();
+        SharedPreferences.Editor password_edit = pref.edit();
+        SharedPreferences.Editor autoLogin_edit = pref.edit();
 
         email_edit.putString("user_email",email_input.getText().toString());
         email_edit.commit();
         name_edit.putString("user_name",user_name);
         name_edit.commit();
+        password_edit.putString("user_password","null");
+        password_edit.commit();
+        autoLogin_edit.putInt("autoLogin",0);
+        autoLogin_edit.commit();
+
 
         Intent homeintent = new Intent(this, HomeActivity.class);
         homeintent.putExtra("UserEmail",email_input.getText().toString());
         startActivity(homeintent);
+        finish();
+
+    }
+
+    public void LoginCheck_Checked(){ // 로그인 성공시 Home Intents 시작
+
+        if (Build.VERSION.SDK_INT > 9) {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+        }
+
+        //Connect to MongoDB
+        MongoClient mongoClient = new MongoClient(new ServerAddress(MongoDB_IP, MongoDB_PORT)); // failed here?
+        DB db = mongoClient.getDB(DB_NAME);
+        DBCollection collection = db.getCollection(COLLECTION_NAME);
+
+        //Check Data in Database with query
+        BasicDBObject query = new BasicDBObject();
+        query.put("email",email_input.getText().toString());
+        DBCursor cursor = collection.find(query);
+        while (cursor.hasNext()) {
+
+            DBObject dbo = (BasicDBObject) cursor.next();
+            try {
+
+                user_name = dbo.get("name").toString();
+
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+        }
+
+        SharedPreferences pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
+
+        SharedPreferences.Editor email_edit = pref.edit();
+        SharedPreferences.Editor name_edit = pref.edit();
+        SharedPreferences.Editor password_edit = pref.edit();
+        SharedPreferences.Editor autoLogin_edit = pref.edit();
+
+        email_edit.putString("user_email",email_input.getText().toString());
+        email_edit.commit();
+        name_edit.putString("user_name",user_name);
+        name_edit.commit();
+        password_edit.putString("user_password",pw_input.getText().toString());
+        password_edit.commit();
+        autoLogin_edit.putInt("autoLogin",1);
+        autoLogin_edit.commit();
+
+        Intent homeintent = new Intent(this, HomeActivity.class);
+        homeintent.putExtra("UserEmail",email_input.getText().toString());
+        startActivity(homeintent);
+        finish();
 
     }
 }

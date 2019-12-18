@@ -24,6 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:background="#E5EBEB"
+                android:textColor="#000000"
                 android:gravity="center"
                 android:text="예약 상세 정보"
                 android:textSize="8pt" />
@@ -63,7 +64,6 @@
                     android:layout_width="264dp"
                     android:layout_height="37dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/border"
                     android:clickable="true"
                     android:gravity="center_vertical"
                     android:onClick="selectDate"
@@ -244,8 +244,8 @@
 
             <ImageView
                 android:id="@+id/pay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="65dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:src="@drawable/paybtn" />
         </LinearLayout>

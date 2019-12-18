@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.util.LruCache;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -97,6 +98,9 @@ public class ItemListActivity extends AppCompatActivity {
     private String newContent;
     private String newOwner_email;
     private FromServerImage newImage = new FromServerImage();
+    private LruCache<String, Bitmap> mMemoryCache;
+
+    private boolean searchCount = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -213,15 +217,15 @@ public class ItemListActivity extends AppCompatActivity {
 
 
         //arraylist, adapter and gridview
-        items_displaying = new ArrayList<Item>(items_from_db);
         adapter = new ItemAdapter(this, items_from_db);
+        items_displaying = new ArrayList<Item>(items_from_db);
         gridView = (GridView) findViewById(R.id.item_grid_view);
         gridView.setAdapter(adapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Item item = items_from_db.get(position);
+                Item item = items_displaying.get(position);
 
                 Intent intent = new Intent(ItemListActivity.this, ItemDetailActivity.class);
                 intent.putExtra("item_object",item);
@@ -310,8 +314,6 @@ public class ItemListActivity extends AppCompatActivity {
                 filterResult();
             }
         }
-
-
     }
     final LocationListener gpsLocationListener = new LocationListener() {
 
@@ -337,8 +339,8 @@ public class ItemListActivity extends AppCompatActivity {
                     i.setDistanceToUser(distance);
                     Log.d("MYGPSCHK",""+distance[0]);
                 }
-                Collections.sort(items_from_db);
-                adapter = new ItemAdapter(getApplicationContext(), items_from_db);
+                Collections.sort(items_displaying);
+                adapter = new ItemAdapter(getApplicationContext(), items_displaying);
                 Log.d("MYGPSCHK", "refresh"  );
                 gridView.setAdapter(adapter);
 
@@ -398,6 +400,15 @@ public class ItemListActivity extends AppCompatActivity {
         return;
     }
 
+    public void addBitmapToMemoryCache( String key, Bitmap bitmap){
+        if( getBitmapFromMemCache( key) == null){
+            mMemoryCache.put( key, bitmap);
+        }
+    }
+    public Bitmap getBitmapFromMemCache( String key){
+        return mMemoryCache.get( key);
+    }
+
 }
 
 class ItemAdapter extends BaseAdapter{
@@ -405,8 +416,19 @@ class ItemAdapter extends BaseAdapter{
     private ArrayList<Item> items = null;
     private int count = 0;
     private FromServerImage newImage = new FromServerImage();
+    private LruCache<String, Bitmap> mMemoryCache;
 
     public ItemAdapter(Context context, ArrayList<Item> items) {
+
+        final int maxMemory = (int)(Runtime.getRuntime().maxMemory() / 1024);
+        final int cacheSize = maxMemory / 8;
+        mMemoryCache = new LruCache<String, Bitmap>( cacheSize){
+            @Override
+            protected int sizeOf( String key, Bitmap bitmap){
+                return bitmap.getByteCount() / 1024;
+            }
+        };
+
         this.items = items;
         this.count = items.size();
         this.inflater = (LayoutInflater)context.getSystemService(
@@ -438,7 +460,13 @@ class ItemAdapter extends BaseAdapter{
         SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
 
         ImageView image = (ImageView)convertView.findViewById(R.id.item_image);
-        image.setImageBitmap(newImage.getImage(item.getFilepath()));
+        if(getBitmapFromMemCache(item.getFilepath()) == null){
+            Bitmap temp = newImage.getImage(item.getFilepath());
+            addBitmapToMemoryCache(item.getFilepath(),temp);
+            image.setImageBitmap(getBitmapFromMemCache(item.getFilepath()));
+        }else{
+            image.setImageBitmap(getBitmapFromMemCache(item.getFilepath()));
+        }
 
         TextView name = (TextView)convertView.findViewById(R.id.item_name);
         name.setText(item.getItem_name());
@@ -455,6 +483,16 @@ class ItemAdapter extends BaseAdapter{
 
         return convertView;
 
+    }
+    public void addBitmapToMemoryCache( String key, Bitmap bitmap){
+        if( getBitmapFromMemCache( key) == null){
+            mMemoryCache.put( key, bitmap);
+        }
+
+    }
+
+    public Bitmap getBitmapFromMemCache( String key){
+        return mMemoryCache.get( key);
     }
 
 }

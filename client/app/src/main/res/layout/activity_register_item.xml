@@ -28,11 +28,11 @@
 
             <ImageView
                 android:id="@+id/register_photo"
-                android:layout_width="397dp"
+                android:layout_width="335dp"
                 android:layout_height="256dp"
                 android:layout_gravity="center"
-                android:src="@drawable/addphoto"
-                android:background="@drawable/border"/>
+                android:background="@drawable/border"
+                android:src="@drawable/addphoto" />
 
 
             <TextView

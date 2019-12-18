@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+
+    <EditText
+        android:id="@+id/register_keyword_content"
+        android:layout_width="346dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/border"
+        android:hint="   내용 입력"
+        android:inputType="textCapSentences"
+        android:minLines="10"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/btnregister_keyword"
+        android:layout_width="111dp"
+        android:layout_height="34dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="6dp"
+        android:src="@drawable/savedate"/>
+
+
+</LinearLayout>

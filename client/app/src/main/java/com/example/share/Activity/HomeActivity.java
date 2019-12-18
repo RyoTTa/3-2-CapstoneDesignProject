@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -120,10 +121,10 @@ public class HomeActivity extends AppCompatActivity {
                                 startActivity(BucketList_Intents);
                                 break;
                             case R.id.navigation_menu3:
-
+                                Toast toast = Toast.makeText(getApplicationContext(), "홈 화면입니다.", Toast.LENGTH_SHORT); toast.show();
                                 break;
                             case R.id.navigation_menu4:
-
+                                Toast toast2 = Toast.makeText(getApplicationContext(), "결제 미구현.", Toast.LENGTH_SHORT); toast2.show();
                                 break;
                             case R.id.navigation_menu5:
                                 Intent Share_Intents = new Intent(getApplicationContext(), MyPageActivity.class);

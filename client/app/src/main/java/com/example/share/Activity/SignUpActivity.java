@@ -50,7 +50,34 @@ public class SignUpActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new JSONTask().execute("http://ec2-15-164-51-129.ap-northeast-2.compute.amazonaws.com:3000/signup","signup");
+                String str = id_input.getText().toString();
+                if(str.length() >= 10){
+                    String result = str.substring(str.length()-9, str.length());
+                    if(result.equals("knu.ac.kr")) {
+                        new JSONTask().execute("http://ec2-15-164-51-129.ap-northeast-2.compute.amazonaws.com:3000/signup", "signup");
+                    }else{
+                        AlertDialog.Builder alert = new AlertDialog.Builder(SignUpActivity.this);
+                        alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();     //닫기
+                            }
+                        });
+                        alert.setMessage("knu.ac.kr 주소 메일만 사용 가능합니다.");
+                        alert.show();
+                    }
+                }else{
+                    AlertDialog.Builder alert = new AlertDialog.Builder(SignUpActivity.this);
+                    alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();     //닫기
+                        }
+                    });
+                    alert.setMessage("knu.ac.kr 주소 메일만 사용 가능합니다.");
+                    alert.show();
+                }
+
             }
         });
     }

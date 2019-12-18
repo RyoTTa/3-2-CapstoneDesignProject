@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="#E5EBEB"
+        android:textColor="#000000"
         android:gravity="center"
         android:text="공유된 물건"
         android:textSize="8pt"
@@ -27,7 +28,7 @@
         android:verticalSpacing="5dp"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/page_header" />
+        app:layout_constraintTop_toBottomOf="@+id/page_header" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

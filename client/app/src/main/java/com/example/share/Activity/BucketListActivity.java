@@ -13,19 +13,24 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import com.example.share.Chatting.ChatListActivity;
 import com.example.share.Data.Item;
 import com.example.share.MongoDB.FromServerImage;
 import com.example.share.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -52,6 +57,7 @@ public class BucketListActivity extends AppCompatActivity {
     private GridView gridView = null;
     private LocationManager lm = null;
     private TextView page_header = null;
+    private BottomNavigationView bottomNavigationView;
     String[] text = {"장소", "공구", "음향기기", "의료", "유아용품", "기타"};
     String[] text_send = {"place", "tool", "sound_equipment", "medical_equipment", "baby_goods", "etc"};
     String UserEmail;
@@ -212,6 +218,36 @@ public class BucketListActivity extends AppCompatActivity {
             }
         });
 
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);  //bottom navigation bar 에서 메뉴 클릭 리스너
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch(item.getItemId()) {
+                            case R.id.navigation_menu1:
+                                Intent ChatList_Intents = new Intent(getApplicationContext(), ChatListActivity.class);  //메시지 activity 실행 수정필요
+                                startActivity(ChatList_Intents);
+                                finish();
+                                break;
+                            case R.id.navigation_menu2:
+                                Toast toast = Toast.makeText(getApplicationContext(), "찜 화면입니다.", Toast.LENGTH_SHORT); toast.show();
+                                break;
+                            case R.id.navigation_menu3:
+                                finish();
+                                break;
+                            case R.id.navigation_menu4:
+                                Toast toast2 = Toast.makeText(getApplicationContext(), "결제 미구현.", Toast.LENGTH_SHORT); toast2.show();
+                                break;
+                            case R.id.navigation_menu5:
+                                Intent Share_Intents = new Intent(getApplicationContext(), MyPageActivity.class);
+                                startActivity(Share_Intents);
+                                finish();
+                                break;
+                        }
+                        return true;
+                    }
+                });
     }
 
     final LocationListener gpsLocationListener = new LocationListener() {

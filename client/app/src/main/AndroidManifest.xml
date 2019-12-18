@@ -39,6 +39,10 @@
         <activity android:name=".Activity.MyPageActivity" />
         <activity android:name=".Activity.UpdateItemActivity" />
         <activity android:name=".Activity.CompleteActivity" />
+        <activity android:name=".Activity.KeywordAlarmActivity" />
+        <activity
+            android:name=".Activity.RegisterKeywordActivity"
+            android:theme="@style/Theme.MyDialog"/>
         <activity
             android:name=".Activity.RegisterReviewActivity"
             android:theme="@style/Theme.MyDialog" />

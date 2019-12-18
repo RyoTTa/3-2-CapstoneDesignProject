@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:background="#E5EBEB"
+        android:textColor="#000000"
         android:gravity="center"
         android:text="찜 목록"
         android:textSize="8pt"
@@ -30,5 +31,21 @@
         app:layout_constraintTop_toBottomOf="@+id/page_header"
         tools:layout_editor_absoluteX="16dp" />
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#E5EBEB"
+
+        app:itemIconTint="@android:color/black"
+        app:itemTextColor="#E5EBEB"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/menu_bottom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

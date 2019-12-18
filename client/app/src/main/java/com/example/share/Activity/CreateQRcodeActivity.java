@@ -1,5 +1,6 @@
 package com.example.share.Activity;
 
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -15,13 +16,16 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 public class CreateQRcodeActivity extends AppCompatActivity {
     private ImageView iv;
     private String text;
+    SharedPreferences pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createqrcode);
 
+        pref = getSharedPreferences("pref", AppCompatActivity.MODE_PRIVATE);
         iv = (ImageView)findViewById(R.id.qrcode);
-        text = "https://park-duck.tistory.com";
+        text = pref.getString("user_email","");;
 
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         try{

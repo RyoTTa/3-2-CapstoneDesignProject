@@ -80,6 +80,10 @@
         <activity android:name="com.example.share.Activity.MyPageActivity" />
         <activity android:name="com.example.share.Activity.UpdateItemActivity" />
         <activity android:name="com.example.share.Activity.CompleteActivity" />
+        <activity android:name="com.example.share.Activity.KeywordAlarmActivity" />
+        <activity
+            android:name="com.example.share.Activity.RegisterKeywordActivity"
+            android:theme="@style/Theme.MyDialog" />
         <activity
             android:name="com.example.share.Activity.RegisterReviewActivity"
             android:theme="@style/Theme.MyDialog" />

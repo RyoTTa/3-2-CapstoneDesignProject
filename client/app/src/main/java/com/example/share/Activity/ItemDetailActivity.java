@@ -411,7 +411,6 @@ public class ItemDetailActivity extends AppCompatActivity {
 
 
             try{
-
                 URL url = new URL("http://ec2-15-164-51-129.ap-northeast-2.compute.amazonaws.com:3000/bucket_insert");
 
                 //연결을 함

@@ -9,17 +9,19 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="321dp"
-        android:layout_height="142dp"
-        android:adjustViewBounds="true"
+        android:id="@+id/imageView4"
+        android:layout_width="266dp"
+        android:layout_height="261dp"
+        android:background="@android:color/transparent"
+        android:clickable="true"
         android:padding="0dp"
-        android:src="@drawable/head_logo"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintVertical_bias="0.14" />
 
     <EditText
         android:id="@+id/email_input"
@@ -27,6 +29,7 @@
         android:layout_height="46dp"
         android:layout_centerHorizontal="true"
         android:hint="아이디"
+        android:background="@null"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/id_box"
         app:layout_constraintEnd_toEndOf="@+id/id_box"
@@ -42,6 +45,7 @@
         android:layout_below="@+id/id_input"
         android:layout_centerHorizontal="true"
         android:hint="패스워드"
+        android:background="@null"
         android:inputType="text"
         android:password="true"
         app:layout_constraintBottom_toBottomOf="@+id/pw_box"
@@ -58,10 +62,12 @@
         android:clickable="true"
         android:padding="0dp"
         android:src="@drawable/signup_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/pw_box"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="@+id/pw_box"
-        app:layout_constraintTop_toBottomOf="@+id/pw_box" />
+        app:layout_constraintTop_toBottomOf="@+id/pw_box"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/id_box"
@@ -70,10 +76,10 @@
         android:src="@drawable/loginbox"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.575"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.187" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.07" />
 
     <ImageView
         android:id="@+id/pw_box"
@@ -95,9 +101,23 @@
         android:clickable="true"
         android:padding="0dp"
         android:src="@drawable/login_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/pw_box"
-        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintHorizontal_bias="0.705"
         app:layout_constraintStart_toStartOf="@+id/pw_box"
-        app:layout_constraintTop_toBottomOf="@+id/pw_box" />
+        app:layout_constraintTop_toBottomOf="@+id/pw_box"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckBox
+        android:id="@+id/autoLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="자동로그인"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pw_box"
+        app:layout_constraintVertical_bias="0.378" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,14 +4,20 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.share.Activity.BucketListActivity;
+import com.example.share.Activity.MyPageActivity;
 import com.example.share.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,6 +48,8 @@ public class ChatListActivity extends AppCompatActivity {
     private String DB_NAME = "local";
     private String USER_COLLECTION= "users";
 
+    private BottomNavigationView bottomNavigationView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +72,36 @@ public class ChatListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigation);  //bottom navigation bar 에서 메뉴 클릭 리스너
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch(item.getItemId()) {
+                            case R.id.navigation_menu1:
+                                Toast toast = Toast.makeText(getApplicationContext(), "메시지화면입니다.", Toast.LENGTH_SHORT); toast.show();
+                                break;
+                            case R.id.navigation_menu2:
+                                Intent BucketList_Intents = new Intent(getApplicationContext(), BucketListActivity.class);  //찜목록 activity 실행 수정필요
+                                startActivity(BucketList_Intents);
+                                finish();
+                                break;
+                            case R.id.navigation_menu3:
+                                finish();
+                                break;
+                            case R.id.navigation_menu4:
+                                Toast toast2 = Toast.makeText(getApplicationContext(), "결제 미구현.", Toast.LENGTH_SHORT); toast2.show();
+                                break;
+                            case R.id.navigation_menu5:
+                                Intent Share_Intents = new Intent(getApplicationContext(), MyPageActivity.class);
+                                startActivity(Share_Intents);
+                                finish();
+                                break;
+                        }
+                        return true;
+                    }
+                });
 
     }
 
@@ -123,6 +161,8 @@ public class ChatListActivity extends AppCompatActivity {
 
             }
 
+
+
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
@@ -143,6 +183,8 @@ public class ChatListActivity extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 

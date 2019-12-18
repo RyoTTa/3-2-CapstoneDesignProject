@@ -1127,6 +1127,7 @@ drawable appic_round
 drawable avd_hide_password
 drawable avd_show_password
 drawable border
+drawable border2
 drawable border_top_bottom
 drawable btn_add
 drawable btn_qrcode
@@ -1176,6 +1177,7 @@ drawable home_medical_ic
 drawable home_music_ic
 drawable home_place_ic
 drawable home_tools_ic
+drawable homebackground
 drawable ic_chevron_left_gray
 drawable ic_chevron_right_gray
 drawable ic_close_gray
@@ -1198,6 +1200,8 @@ drawable item_sample_handmixer
 drawable item_sample_ipad
 drawable item_sample_longboard
 drawable item_sample_mouse
+drawable keywordaddbtn
+drawable keyworddeletebtn
 drawable listdatebtn
 drawable listlocationbtn
 drawable listmapbtn
@@ -1205,8 +1209,10 @@ drawable login_button
 drawable loginbox
 drawable logo
 drawable logogo_round
+drawable logout
 drawable maain
 drawable main
+drawable mainbackground
 drawable menu_bucket
 drawable menu_home
 drawable menu_message
@@ -1214,10 +1220,12 @@ drawable menu_mypage
 drawable menu_pay
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
+drawable mypage_alarm
 drawable mypage_complete
 drawable mypage_review
 drawable mypage_shared2_ic
 drawable mypage_shred_ic
+drawable mypagebackground
 drawable navigation_empty_icon
 drawable notification_action_background
 drawable notification_bg
@@ -1261,6 +1269,7 @@ drawable tooltip_frame_light
 id ALT
 id CTRL
 id FUNCTION
+id Logout
 id META
 id SHIFT
 id SYM
@@ -1297,6 +1306,7 @@ id alterdialog_title
 id always
 id async
 id auto
+id autoLogin
 id available_days
 id barrier
 id beginning
@@ -1306,6 +1316,7 @@ id bottomNavigation
 id btn_question
 id btn_reservation
 id btnregister
+id btnregister_keyword
 id btnregister_review
 id bucketheart
 id buttonPanel
@@ -1358,6 +1369,7 @@ id date_ok_button
 id date_to
 id decor_content_parent
 id default_activity_button
+id delete
 id delete_item_button
 id design_bottom_sheet
 id design_menu_item_action_area
@@ -1410,6 +1422,7 @@ id image
 id imageView
 id imageView2
 id imageView3
+id imageView4
 id info
 id invisible
 id italic
@@ -1446,6 +1459,7 @@ id line1
 id line3
 id listMode
 id list_item
+id listview1
 id listview_alterdialog_list
 id ll_month_header
 id location
@@ -1511,6 +1525,7 @@ id register_button
 id register_category
 id register_content
 id register_date
+id register_keyword_content
 id register_location
 id register_photo
 id register_price
@@ -1561,6 +1576,7 @@ id share2
 id share3
 id share4
 id share5
+id share6
 id shortcut
 id showCustom
 id showHome
@@ -1596,6 +1612,8 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1709,6 +1727,7 @@ layout activity_createqrcode
 layout activity_home
 layout activity_itemdetail
 layout activity_itemlist
+layout activity_keyword_alarm
 layout activity_login
 layout activity_main
 layout activity_maps
@@ -1717,6 +1736,7 @@ layout activity_mypage
 layout activity_pay
 layout activity_register_item
 layout activity_register_review
+layout activity_registerkeyword
 layout activity_reservation_info
 layout activity_review
 layout activity_select_date

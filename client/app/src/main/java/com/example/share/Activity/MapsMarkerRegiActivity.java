@@ -218,8 +218,9 @@ public class MapsMarkerRegiActivity extends AppCompatActivity implements OnMapRe
                 locationText.setText(send_location);
                 String markerSnippet = "위도:" + String.valueOf(location.getLatitude())
                         + " 경도:" + String.valueOf(location.getLongitude());
-               /// la = String.valueOf(location.getLatitude());
-                //lg = String.valueOf(location.getLongitude());
+                la = String.valueOf(location.getLatitude());
+                lg = String.valueOf(location.getLongitude());
+                Log.d("위치입니다 ",la+" / "+lg);
 
 
                 Log.d(TAG, "onLocationResult : " + markerSnippet);
