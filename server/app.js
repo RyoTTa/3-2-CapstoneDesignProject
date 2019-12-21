@@ -130,6 +130,9 @@ check_qrcode(router, app);
 var bucket= require('./routes/bucket');
 bucket(router,app);
 
+var keyword = require('./routes/keyword');
+keyword(router,app);
+
 var fcm_push = require('./routes/fcm_push');
 fcm_push(router,app);
 //===== 404 에러 페이지 처리 =====//
